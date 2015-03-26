@@ -220,7 +220,10 @@
 					"transCode": "schema.people.hockeyPlayerInfo.clubName",
 					"objectLink": {
 						"registry": "organizations",
-						"name": "baseData.name.v"
+						"schema":"uri://registries/organization#views/organization/view",
+						"fields":{
+							"name": "baseData.name"
+						}
 					}
 				},
 				"positionName": {
