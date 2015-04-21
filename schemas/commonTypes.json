@@ -13,7 +13,7 @@
 			}
 		},
 		"year":{
-			"type":"String"
+			"type":"string"
 		},
 		"email":{
 			"type":"object",
