@@ -31,8 +31,10 @@
 					"objectLink2": {
 						"schema":"uri://registries/people#views/fullperson/view",
 						"registry": "people",
-						"surName": "baseData.surName.v",
-						"name": "baseData.name.v"
+						"fields":{
+							"surName": "baseData.surName",
+							"name": "baseData.name"
+						}
 					}
 				},
 				"clientRef": {
@@ -161,6 +163,15 @@
 			},
 			"search": {
 				"extends":"uri://registries/payments#models/payment",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Fpayments~23views~2Fpayment/{{model.id}}"
+						}
+					}
+				],
 				"listFields": [
 					{
 						"field": "baseData.accountingDate",

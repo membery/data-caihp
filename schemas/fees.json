@@ -1,7 +1,6 @@
 {
 	"$schema": "http://json-schema.org/schema#",
 	"id": "uri://registries/fees#",
-
 	"blocks": {
 		"fee": {
 			"title": "ZÁKLADNÍ INFORMACE",
@@ -16,8 +15,10 @@
 					"objectLink2": {
 						"schema":"uri://registries/people#views/fullperson/view",
 						"registry": "people",
-						"surName": "baseData.surName.v",
-						"name": "baseData.name.v"
+						"fields":{
+							"surName": "baseData.surName",
+							"name": "baseData.name"
+						}
 					}
 				},
 				"club": {
@@ -25,7 +26,10 @@
 					"transCode": "schema.org.baseData.name",
 					"objectLink2": {
 						"registry": "organizations",
-						"name": "baseData.name.v"
+						"schema":"uri://registries/organization#views/organization/view",
+						"fields":{
+							"name": "baseData.name"
+						}
 					}
 				},
 				"membershipFee": {
@@ -119,7 +123,7 @@
 			"fireEvents":{
 				"create": "event-fee-created",
 				"update": "event-fee-updated"
-			},		
+			},
 			"properties": {
 				"baseData": {
 					"extends":"uri://registries/fees#blocks/fee"
@@ -150,19 +154,23 @@
 			},
 			"search": {
 				"extends":"uri://registries/fees#models/fee",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Ffees~23views~2Ffee/{{model.id}}"
+						}
+					}
+				],
 				"listFields": [
 					{
-						"field": "baseData.member.refData.name",
+						"field": "baseData.member",
 						"title": "Meno",
 						"transCode": "schema.fees.listFields.name"
 					},
 					{
-						"field": "baseData.member.refData.surName",
-						"title": "Priezvisko",
-						"transCode": "schema.fees.listFields.surName"
-					},
-					{
-						"field": "baseData.club.refData.name",
+						"field": "baseData.club",
 						"title": "Organizacia",
 						"transCode": "schema.org.baseData.name"
 					},
@@ -181,7 +189,6 @@
 						"title": "Variabilní symbol",
 						"transCode": "schema.fees.baseData.variableSymbol"
 					},
-
 					{
 						"field": "baseData.dueDate",
 						"title": "Datum splatnosti",
