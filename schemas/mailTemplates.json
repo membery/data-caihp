@@ -40,7 +40,7 @@
 	"models": {
 		"mailTemplate": {
 			"title": "Šablóna mailu",
-			"transCode":"schema.schema.mailTemplate.title",
+			"transCode":"schema.mailTemplate.title",
 			"table": "mailtemplates",
 			"security": {
 				"create": {

@@ -26,6 +26,7 @@ angular.module('x-registries')
 		"menu.my.profile.title": "Môj profil",
 		"menu.permissions.title": "Oprávnenia",
 		"menu.schemas.title": "Schémy",
+		"menu.portal.title":"Web Portál",
 		"menu.new.person.lower.level": "Nová osoba",
 		"menu.new.company.lower.level": "Nová spoločnosť",
 		"menu.search.person.lower.level": "Hľadať osobu",
@@ -82,9 +83,6 @@ angular.module('x-registries')
 		"accounting.info.company.fees.overdue": "Poplatky po splatnosti",
 		"accounting.info.company.fees.overdue.value": "v sume",
 
-
-
-
 		"schema.people.personalProfile":"Môj profil",
 		"schema.people.membershipFeeInfo.title":"Členské príspevky",
 		"schema.people.membershipFeeInfo.membershipType":"Typ členského príspevku",
@@ -116,40 +114,24 @@ angular.module('x-registries')
 		"schema.people.hockeyPlayerInfo.stickHandling.left":"Ľavé",
 		"schema.people.hockeyPlayerInfo.stickHandling.right":"Pravé",
 
+		"schema.requests.basedata":"Informácie o žiadosti",
+		"schema.requests.basedata.applicant":"Žiadateľ",
+		"schema.requests.basedata.status":"Stav",
+		"schema.requests.attachments":"Prílohy",
+		"schema.requests.basedata.status.created":"Vytvorená",
+		"schema.requests.basedata.status.processing":"Spracováva sa",
+		"schema.requests.basedata.status.closed":"Uzatvorená",
+		"schema.requests.basedata.assignedto":"Pridelené",
+		"schema.requests.note":"Poznámka",
+		"schema.requests.basedata.subject":"Predmet",
+		"schema.requests.basedata.text":"Text",
+		"schema.requests.basedata.setupDate":"Vytvorená",
+		"schema.requests.basedata.modifiedOn":"Modifikovaná",
+		"schema.requests.basedata.responseText":"Odpoveď",
 
-		"schema.requisitions.title":"Žiadosť",
-		"schema.requisitions.basedata":"Základné informácie",
-		"schema.requisitions.basedata.applicant":"Žiadateľ",
-		"schema.requisitions.basedata.assignedto":"Riešiteľ",
-		"schema.requisitions.basedata.subject":"Predmet žiadosti",
-		"schema.requisitions.basedata.text":"Text žiadosti",
-		"schema.requisitions.basedata.setupdate":"Dátum vystavenia",
-		"schema.requisitions.basedata.status":"Stav",
-		"schema.requisitions.basedata.status.created":"Vytvorená",
-		"schema.requisitions.basedata.status.processing":"Spracovávaná",
-		"schema.requisitions.basedata.status.closed":"Uzavretá",
-		"schema.requisitions.attachments":"Prílohy",
-		"schema.requisitions.basedata.responsetext":"Odpoveď",
-		"schema.requisitions.basedata.modifiedOn":"Čas poslednej zmeny",
-
-        "schema.requests.basedata":"Informácie o žiadosti",
-        "schema.requests.basedata.applicant":"Žiadateľ",
-        "schema.requests.basedata.status":"Stav",
-        "schema.requests.attachments":"Prílohy",
-        "schema.requests.basedata.subject":"Predmet",
-        "schema.requests.basedata.text":"Text",
-        "schema.requests.basedata.status.created":"Vytvorená",
-        "schema.requests.basedata.status.processing":"Spracováva sa",
-        "schema.requests.basedata.status.closed":"Uzatvorená",
-       	"schema.requests.basedata.assignedto":"Pridelené",
-       	"schema.requests.note":"Poznámka",
-       	"schema.requests.basedata.setupDate":"Vytvorená",
-       	"schema.requests.basedata.modifiedOn":"Modifikovaná",
-       	"schema.requests.basedata.responseText":"Odpoveď",
-
-       	"schema.generalRequests.title":"Všeobecná žiadosť",
-       	"schema.registrationRequests.title":"Žiadosť o registráciu",
-       	"schema.dataChangeRequests.title":"Žiadosť o zmenu údajov",
+		"schema.generalRequests.title":"Všeobecná žiadosť",
+		"schema.registrationRequests.title":"Žiadosť o registráciu",
+		"schema.dataChangeRequests.title":"Žiadosť o zmenu údajov",
 
 		"schema.fees.title":"Príspevok",
 		"schema.fees.baseData":"Základné údaje",
@@ -172,12 +154,11 @@ angular.module('x-registries')
 		"schema.fees.listFields.name":"Meno",
 		"schema.fees.listFields.surName":"Priezvisko",
 
-
 		"schema.payments.new": "Nová platba",
 		"schema.payments.search": "Platba",
 		"schema.payments.view": "Platba",
 
-
+		"schema.payments.baseData":"Základné údaje",
 		"schema.payments.baseData.accountingDate": "Učtovný dátum",
 		"schema.payments.baseData.amount": "Suma",
 		"schema.payments.baseData.constantSymbol": "Konšt.symbol",
@@ -199,8 +180,7 @@ angular.module('x-registries')
 		"schema.payments.listFields.amount":"Suma",
 		"schema.payments.listFields.status":"Stav",
 
-
-
+		"schema.mailTemplate.title":"Vzor",
 		"schema.mailTemplate.basedata.title":"Základné údaje",
 		"schema.mailTemplate.basedata.name":"Názov vzoru",
 		"schema.mailTemplate.basedata.subject":"Predmet vzoru",
@@ -240,7 +220,7 @@ angular.module('x-registries')
 		"schema.fees.view":"Členský príspevok",
 		"schema.fees.search":"Členský príspevok",
 
-		"schema.imports.new": "Novy import",
+		"schema.imports.new": "Nový import",
 		"schema.imports.search": "Import",
 		"schema.imports.view": "Import",
 		"schema.imports.baseData": "Zakladne informacie",
@@ -254,10 +234,10 @@ angular.module('x-registries')
 		"schema.mailTemplate.basedata.text":"Text správy(plaintext)",
 		"schema.mailTemplate.basedata.html":"Text správy(html)",
 
-
 		"schema.org.new":"Nová organizácia",
 		"schema.org.title":"Organizácia",
 		"schema.people.title":"Člen",
+		"schema.org.baseData":"Základné údaje",
 		"schema.org.baseData.name": "Názov organizácie",
 		"schema.org.listFields.id": "ID",
 		"schema.org.listFields.name": "Meno",
@@ -308,12 +288,12 @@ angular.module('x-registries')
 		"schema.people.otherInfo.membershipEndDate":"Člen do",
 		"schema.people.otherInfo.note":"Poznámka",
 
-		"menu.fees.new.lower.level" : "Novy poplatok",
-		"menu.fees.search.lower.level" : "Hladat poplatok",
-		"menu.imports.lower.level":"Hladat import",
-		"menu.imports.new.lower.level":"Novy import",
-		"menu.payments.new.lower.level":"Nova Platba",
-		"menu.payments.lower.level":"Hladat platbu",
+		"menu.fees.new.lower.level" : "Nový poplatok",
+		"menu.fees.search.lower.level" : "Hladať poplatok",
+		"menu.imports.lower.level":"Hladať import",
+		"menu.imports.new.lower.level":"Nový import",
+		"menu.payments.new.lower.level":"Nová platba",
+		"menu.payments.lower.level":"Hladať platbu",
 
 		"schema.group.listFields.id":"ID",
 		"schema.group.listFields.name":"Názov skupiny",
@@ -327,7 +307,11 @@ angular.module('x-registries')
 		"schema.security.baseData.name":"Názov profilu",
 		"schema.security.baseData":"Základné údaje",
 
-		"schema.securityMaster.new":"Nový bezpečnostný profil"
+		"schema.securityMaster.title":"Bezpečnostný profil",
+		"schema.securityMaster.new":"Nový bezpečnostný profil",
+
+		"schema.member.view":"Člen",
+
 	});
 
 	$translateProvider.translations('cz', {
@@ -360,6 +344,7 @@ angular.module('x-registries')
 		"menu.my.profile.title": "Můj profil",
 		"menu.permissions.title": "Oprávnění",
 		"menu.schemas.title": "Schémata",
+		"menu.portal.title":"Web Portál",
 		"menu.new.person.lower.level": "Nová osoba",
 		"menu.new.company.lower.level": "Nová společnosť",
 		"menu.search.person.lower.level": "Hledat osobu",
@@ -391,7 +376,6 @@ angular.module('x-registries')
 		"menu.massmailing.new.lower.level":"Nový vzor",
 		"menu.massmailing.search.lower.level":"Vyhledat vzor",
 		"menu.massmailing.send.title":"Odeslat",
-
 		"menu.requests.solver.title":"Rešení žádostí",
 		"menu.requests.solver.search.lower.level":"Vyhľadáť",
 		"menu.requests.title":"Žádosti",
@@ -416,9 +400,6 @@ angular.module('x-registries')
 		"accounting.info.company.fees.overdue": "Poplatky po splatnosti",
 		"accounting.info.company.fees.overdue.value": "v sume",
 
-
-
-
 		"schema.mailTemplate.basedata.name":"Název šablony",
 		"schema.mailTemplate.basedata.subject":"Predment mailu",
 
@@ -440,6 +421,7 @@ angular.module('x-registries')
 
 		"schema.people.membershipFeeInfo.paymentFrequency.1xyear": "1x ročne",
 		"schema.people.membershipFeeInfo.paymentFrequency.2xyear": "2x ročne",
+		"schema.people.membershipFeeInfo.paymentFrequency.4xyear": "4x ročne",
 		"schema.people.membershipFeeInfo.paymentFrequency.12xyear": "12x ročne",
 
 		"schema.people.hockeyPlayerInfo.positionName.forward":"Útočník",
@@ -454,23 +436,6 @@ angular.module('x-registries')
 
 		"schema.people.hockeyPlayerInfo.stickHandling.left":"Levé",
 		"schema.people.hockeyPlayerInfo.stickHandling.right":"Pravé",
-
-		"schema.requisitions.title":"Žádost",
-		"schema.requisitions.basedata":"Základní údaje",
-		"schema.requisitions.basedata.applicant":"Žadatel",
-		"schema.requisitions.basedata.assignedto":"Rešitel",
-		"schema.requisitions.basedata.subject":"Predmet žádosti",
-		"schema.requisitions.basedata.text":"Text žádosti",
-		"schema.requisitions.basedata.setupdate":"Datum vystavení",
-		"schema.requisitions.basedata.status":"Stav",
-		"schema.requisitions.basedata.status.created":"Vytvorená",
-		"schema.requisitions.basedata.status.processing":"Spracovávaná",
-		"schema.requisitions.basedata.status.closed":"Uzavretá",
-		"schema.requisitions.attachments":"Přílohy",
-		"schema.requisitions.basedata.responsetext":"Odpověď",
-		"schema.requisitions.basedata.modifiedOn":"Čas poslednej zmeny",
-
-
 
 		"schema.fees.title":"Poplatek",
 		"schema.fees.view":"Poplatek",
@@ -502,6 +467,7 @@ angular.module('x-registries')
 		"schema.payments.search": "Platba",
 		"schema.payments.view": "Platba",
 
+		"schema.payments.baseData":"Základní údaje",
 		"schema.payments.baseData.accountingDate": "Učtovní datum",
 		"schema.payments.baseData.amount": "Suma",
 		"schema.payments.baseData.constantSymbol": "Konšt.symbol",
@@ -523,7 +489,7 @@ angular.module('x-registries')
 		"schema.payments.listFields.amount":"Suma",
 		"schema.payments.listFields.status":"Stav",
 
-
+		"schema.mailTemplate.title":"Vzor",
 		"schema.mailTemplate.basedata.title":"Základné údaje",
 		"schema.mailTemplate.basedata.name":"Názov vzoru",
 		"schema.mailTemplate.basedata.subject":"Predmet vzoru",
@@ -582,6 +548,7 @@ angular.module('x-registries')
 		"schema.org.new":"Nová organizace",
 		"schema.org.title":"Organizace",
 		"schema.people.title":"Člen",
+		"schema.org.baseData":"Základní informace",
 		"schema.org.baseData.name": "Název organizace",
 		"schema.org.listFields.id": "ID",
 		"schema.org.listFields.name": "Jméno",
@@ -632,24 +599,24 @@ angular.module('x-registries')
 		"schema.people.otherInfo.membershipEndDate":"Člen do",
 		"schema.people.otherInfo.note":"Poznámka",
 
-        "schema.requests.basedata":"Informace o žádosti",
-        "schema.requests.basedata.applicant":"Žadatel",
-        "schema.requests.basedata.status":"Stav",
-        "schema.requests.attachments":"Přílohy",
-        "schema.requests.basedata.status.created":"Vytvořená",
-        "schema.requests.basedata.status.processing":"Zpracovává se",
-        "schema.requests.basedata.status.closed":"Uzavřená",
-     	"schema.requests.basedata.assignedto":"Přideleno",
-       	"schema.requests.note":"Poznámka",
-        "schema.requests.basedata.subject":"Předmět",
-        "schema.requests.basedata.text":"Text",
-       	"schema.requests.basedata.setupDate":"Vytvořená",
-       	"schema.requests.basedata.modifiedOn":"Modifikovaná",
-       	"schema.requests.basedata.responseText":"Odpověď",
+		"schema.requests.basedata":"Informace o žádosti",
+		"schema.requests.basedata.applicant":"Žadatel",
+		"schema.requests.basedata.status":"Stav",
+		"schema.requests.attachments":"Přílohy",
+		"schema.requests.basedata.status.created":"Vytvořená",
+		"schema.requests.basedata.status.processing":"Zpracovává se",
+		"schema.requests.basedata.status.closed":"Uzavřená",
+		"schema.requests.basedata.assignedto":"Přideleno",
+		"schema.requests.note":"Poznámka",
+		"schema.requests.basedata.subject":"Předmět",
+		"schema.requests.basedata.text":"Text",
+		"schema.requests.basedata.setupDate":"Vytvořená",
+		"schema.requests.basedata.modifiedOn":"Modifikovaná",
+		"schema.requests.basedata.responseText":"Odpověď",
 
-       	"schema.generalRequests.title":"Všeobecná žádost",
-       	"schema.registrationRequests.title":"Žádost o registraci",
-       	"schema.dataChangeRequests.title":"Žádost o změnu údajů",
+		"schema.generalRequests.title":"Všeobecná žádost",
+		"schema.registrationRequests.title":"Žádost o registraci",
+		"schema.dataChangeRequests.title":"Žádost o změnu údajů",
 
 		"menu.fees.new.lower.level" : "Nový poplatek",
 		"menu.fees.search.lower.level" : "Hledat poplatek",
@@ -760,24 +727,24 @@ $translateProvider.translations('en', {
 		"schema.people.otherInfo.membershipStartDate":"Membership start date",
 		"schema.people.otherInfo.membershipEndDate":"Membership end date",
 
-        "schema.requests.basedata":"Request information",
-        "schema.requests.basedata.applicant":"Applicant",
-        "schema.requests.basedata.status":"Status",
-        "schema.requests.attachments":"Attachments",
-        "schema.requests.basedata.status.created":"Created",
-        "schema.requests.basedata.status.processing":"Processing",
-        "schema.requests.basedata.status.closed":"Closed",
-        "schema.requests.basedata.assignedto":"Assigned to",
-       	"schema.requests.note":"Note",
-        "schema.requests.basedata.subject":"Subject",
-        "schema.requests.basedata.text":"Text",
-       	"schema.requests.basedata.setupDate":"Created",
-       	"schema.requests.basedata.modifiedOn":"Modified",
-       	"schema.requests.basedata.responseText":"Response",
+		"schema.requests.basedata":"Request information",
+		"schema.requests.basedata.applicant":"Applicant",
+		"schema.requests.basedata.status":"Status",
+		"schema.requests.attachments":"Attachments",
+		"schema.requests.basedata.status.created":"Created",
+		"schema.requests.basedata.status.processing":"Processing",
+		"schema.requests.basedata.status.closed":"Closed",
+		"schema.requests.basedata.assignedto":"Assigned to",
+		"schema.requests.note":"Note",
+		"schema.requests.basedata.subject":"Subject",
+		"schema.requests.basedata.text":"Text",
+		"schema.requests.basedata.setupDate":"Created",
+		"schema.requests.basedata.modifiedOn":"Modified",
+		"schema.requests.basedata.responseText":"Response",
 
-       	"schema.generalRequests.title":"General request",
-       	"schema.registrationRequests.title":"Registration request",
-       	"schema.dataChangeRequests.title":"Data change request",
+		"schema.generalRequests.title":"General request",
+		"schema.registrationRequests.title":"Registration request",
+		"schema.dataChangeRequests.title":"Data change request",
 
 		"menu.portal.title":"Web Portal",
 		"menu.portal.edit.lower.level":"Edit",
@@ -797,6 +764,7 @@ $translateProvider.translations('en', {
 		"menu.requests.search.lower.level":"Search",
 		"menu.requests.new.general.lower.level":"General request",
 		"menu.requests.search.general.lower.level":"General request search",
+
 		"menu.requests.new.registration.lower.level":"New registration",
 		"menu.requests.search.registration.lower.level":"Registration search",
 		"menu.requests.new.change.lower.level":"Data change",
@@ -862,14 +830,5 @@ $translateProvider.translations('en', {
 		"schema.security.baseData.name":"Profile name",
 
 		"schema.member.view":"Member"
-
-	});
-	$translateProvider.registerAvailableLanguageKeys(['en','cz','sk','ja'], {
-		'en_US': 'en',
-		'en_GB': 'en',
-		'cs': 'cz',
-		'sk': 'sk',
-		'ja': 'ja',
-		'*': 'cz' // must be last
 	});
 }]);
