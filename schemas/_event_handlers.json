@@ -23,5 +23,10 @@
         "name": "player-modified-handler",
         "file": "data/js/event-handlers/player-modified.js",
         "enabled": true
+    },
+    {
+        "name": "request-modified-handler",
+        "file": "data/js/event-handlers/request-modified.js",
+        "enabled": true
     }
 ]

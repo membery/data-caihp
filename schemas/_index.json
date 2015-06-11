@@ -17,5 +17,8 @@
 	"imports.json",
 	"payments.json",
 	"commonEnums.json",
-	"commonTypes.json"
+	"commonTypes.json",
+	"generalRequests.json",
+	"registrationRequests.json",
+	"dataChangeRequests.json"
 ]

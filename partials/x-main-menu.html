@@ -1,0 +1,89 @@
+<ul xpsui-menu-items>
+	<li ng-show="hasPermissions(['Registry People'])"><a href="#" class="x-submenu-toggle"><i class="icon-user fa-2x"></i><span>{{'menu.person.title' | translate}}</span></a>
+		<ul>
+			<li ng-show="hasPermissions(['Registry - write'])"><a href="#/registry/new/{{'uri://registries/people#views/fullperson'|xpsuiuriescape}}"><span>{{'menu.new.person.lower.level' | translate}}</span></a></li>
+			<li ng-show="hasPermissions(['Registry - read'])"><a href="#/registry/search/{{'uri://registries/people#views/fullperson/search'|xpsuiuriescape}}"><span>{{'menu.search.person.lower.level' | translate}}</span></a></li>
+		</ul>
+	</li>
+	<li ng-show="hasPermissions(['Registry Fees'])"><a href="#" class="x-submenu-toggle"><i class="icon-credit-card fa-2x"></i><span>{{'menu.fees.title' | translate}}</span></a>
+		<ul>
+			<li ng-show="hasPermissions(['Registry - write'])"><a href="#/registry/new/{{'uri://registries/fees#views/fee'|xpsuiuriescape}}"><span>{{'menu.fees.new.lower.level' | translate}}</span></a></li>
+			<li ng-show="hasPermissions(['Registry - read'])"><a href="#/registry/search/{{'uri://registries/fees#views/fee/search'|xpsuiuriescape}}"><span>{{'menu.fees.search.lower.level' | translate}}</span></a></li>
+
+			<li ng-show="hasPermissions(['Registry - write'])"><a href="#/registry/new/{{'uri://registries/payments#views/payment'|xpsuiuriescape}}"><span>{{'menu.payments.new.lower.level' | translate}}</span></a></li>
+			<li ng-show="hasPermissions(['Registry - read'])"><a href="#/registry/search/{{'uri://registries/payments#views/payment/search'|xpsuiuriescape}}"><span>{{'menu.payments.lower.level' | translate}}</span></a></li>
+
+			<li ng-show="hasPermissions(['Registry - write'])"><a href="#/registry/new/{{'uri://registries/imports#views/import'|xpsuiuriescape}}"><span>{{'menu.imports.new.lower.level' | translate}}</span></a></li>
+			<li ng-show="hasPermissions(['Registry - read'])"><a href="#/registry/search/{{'uri://registries/imports#views/import/search'|xpsuiuriescape}}"><span>{{'menu.imports.lower.level' | translate}}</span></a></li>
+		</ul>
+	</li>	
+
+	<li ng-show="hasPermissions(['Registry Organization'])"><a href="#" class="x-submenu-toggle"><i class="fa fa-empire fa-2x"></i><span>{{'menu.company.title' | translate}}</span></a>
+		<ul>
+			<li ng-show="hasPermissions(['Registry - write'])"><a href="#/registry/new/{{'uri://registries/organization#views/organization'|xpsuiuriescape}}"><span>{{'menu.new.lower.level.she' | translate}}</span></a></li>
+			<li ng-show="hasPermissions(['Registry - read'])"><a href="#/registry/search/{{'uri://registries/organization#views/organization/search'|xpsuiuriescape}}"><span>{{'menu.search.lower.level' | translate}}</span></a></li>			
+		</ul>
+	</li>
+
+	<li ng-show="hasPermissions(['System User'])"><a href="#" class="x-submenu-toggle"><i class="icon-user fa-2x"></i><span>{{'menu.my.profile.title' | translate}}</span></a>
+		<ul>
+			<li><a href="#/personal-page"><span>{{'menu.profile.lower.level' | translate}}</span></a></li>
+			<li><a href="#/personal-change-password"><span>{{'menu.change.password.lower.level' | translate}}</span></a></li>
+		</ul>
+	</li>
+
+	<li ng-show="hasPermissions(['Registry - read'])"><a href="#" class="x-submenu-toggle"><i class="icon-lock fa-2x"></i><span>{{'menu.permissions.title' | translate}}</span></a>
+		<ul>
+			<li><a href="#/registry/new/{{'uri://registries/security#groupmaster'|xpsuiuriescape}}"><span>{{'menu.new.group.lower.level' | translate}}</span></a></li>
+			<li><a href="#/security/group/edit/"><span>{{'menu.permission.groups.lower.level' | translate}}</span></a></li>
+			<li><a href="#/security/user/edit"><span>{{'menu.user.permissions.lower.level' | translate}}</span></a></li>
+			<li><a href="#/registry/new/{{'uri://registries/security#profilesmaster'|xpsuiuriescape}}"><span>{{'menu.new.profile.lower.level' | translate}}</span></a></li>
+			<li><a href="#/security/profile/edit"><span>{{'menu.profiles.lower.level' | translate}}</span></a></li>	
+		</ul>
+	</li>
+
+	<li ng-show="hasPermissions(['Requests - solve'])"><a href="#" class="x-submenu-toggle"><i class="fa fa-tasks fa-2x"></i><span>{{'menu.requests.solver.title' | translate}}</span></a>
+		<ul>
+			<li><a href="#/registry/search/{{'uri://registries/generalRequests#views/requestSolver/search'|xpsuiuriescape}}"><span>{{'menu.requests.search.general.lower.level' | translate}}</span></a></li>
+<!-- 			<li><a href="#/registry/search/{{'uri://registries/registrationRequests#views/peopleRegistrationSolver/search'|xpsuiuriescape}}"><span>{{'menu.requests.search.registration.lower.level' | translate}}</span></a></li>
+			<li><a href="#/registry/search/{{'uri://registries/dataChangeRequests#views/dataChangeSolver/search'|xpsuiuriescape}}"><span>{{'menu.requests.search.change.lower.level' | translate}}</span></a></li> -->
+		</ul>
+	</li>
+	<li ng-show="hasPermissions(['Registry Requests'])"><a href="#" class="x-submenu-toggle"><i class="fa fa-edit fa-2x"></i><span>{{'menu.requests.title' | translate}}</span></a>
+		<ul>
+			<li ng-show="hasPermissions(['Requests - write'])"><a href="#/registry/new/{{'uri://registries/generalRequests#views/requestApplicant'|xpsuiuriescape}}"><span>{{'menu.requests.new.general.lower.level' | translate}}</span></a></li>
+			<li ng-show="hasPermissions(['Requests - read'])"><a href="#/registry/search/{{'uri://registries/generalRequests#views/requestApplicant/search'|xpsuiuriescape}}"><span>{{'menu.requests.search.general.lower.level' | translate}}</span></a></li>
+<!-- 			<li ng-show="hasPermissions(['Requests - write'])"><a href="#/registry/new/{{'uri://registries/registrationRequests#views/peopleRegistrationApplicant'|xpsuiuriescape}}"><span>{{'menu.requests.new.registration.lower.level' | translate}}</span></a></li>
+			<li ng-show="hasPermissions(['Requests - read'])"><a href="#/registry/search/{{'uri://registries/registrationRequests#views/peopleRegistrationApplicant/search'|xpsuiuriescape}}"><span>{{'menu.requests.search.registration.lower.level' | translate}}</span></a></li>
+			<li ng-show="hasPermissions(['Requests - write'])"><a href="#/registry/new/{{'uri://registries/dataChangeRequests#views/dataChangeApplicant'|xpsuiuriescape}}"><span>{{'menu.requests.new.change.lower.level' | translate}}</span></a></li>
+			<li ng-show="hasPermissions(['Requests - read'])"><a href="#/registry/search/{{'uri://registries/dataChangeRequests#views/dataChangeApplicant/search'|xpsuiuriescape}}"><span>{{'menu.requests.search.change.lower.level' | translate}}</span></a></li> -->
+		</ul>
+	</li>	
+
+	<li ng-show-"hasPermissions(['Registry Massmail'])"><a href="#" class="x-submenu-toggle"><i class="icon-massmail fa-2x"></i><span>{{'menu.massmailing.title' | translate}}</span></a>
+		<ul>
+			<li><a href="#/registry/new/{{'uri://registries/mailtemplates#views/mailTemplate'|xpsuiuriescape}}"><span>{{'menu.massmailing.new.lower.level' | translate}}</span></a></li>
+           	<li><a href="#/registry/search/{{'uri://registries/mailtemplates#views/mailTemplate/search'|xpsuiuriescape}}"><span>{{'menu.massmailing.search.lower.level' | translate}}</span></a></li>
+           	<li><a href="#/massmailing"><span>{{'menu.massmailing.send.title' | translate}}</span></a></li>
+		</ul>
+	</li>
+
+	<li ng-show="hasPermissions(['Registry - read'])"><a href="#" class="x-submenu-toggle"><i class="icon-bar-chart fa-2x"></i><span>{{'menu.statistics.title' | translate}}</span></a>
+		<ul>
+			<li><a href="#/statistics"><span>{{'menu.statistics.show.title' | translate}}</span></a></li>
+		</ul>
+	</li>
+
+	<li ng-show="hasPermissions(['System Admin'])"><a href="#" class="x-submenu-toggle"><i class="icon-info-circle fa-2x"></i><span>{{'menu.schemas.title' | translate}}</span></a>
+		<ul>
+			<li><a href="#/schema/edit"><span>{{'menu.schema.list.lower.level' | translate}}</span></a></li>
+		</ul>
+	</li>
+
+	<li ng-show="hasPermissions(['Portal - write'])"><a href="#" class="x-submenu-toggle"><i class="icon-info-circle fa-2x"></i><span>{{'menu.portal.title' | translate}}</span></a>
+		<ul>
+			<li><a href="#/portal/edit"><span>{{'menu.portal.edit.lower.level' | translate}}</span></a></li>
+			<li><a href="#/portal/menu"><span>{{'menu.portal.menu.lower.level' | translate}}</span></a></li>
+		</ul>
+	</li>
+</ul>

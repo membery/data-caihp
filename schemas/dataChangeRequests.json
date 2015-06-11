@@ -1,0 +1,190 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "uri://registries/dataChangeRequests#",
+	"models": {
+		"dataChange": {
+			"title": "Zmena údajov",
+			"transCode": "schema.dataChangeRequests.title",
+			"table": "dataChangeRequests",
+			"security": {
+				"create": {
+					"static": [
+						"Requests - write"
+					]
+				},
+				"read": {
+					"static": [
+						"Requests - read"
+					]
+				},
+				"modify": {
+					"static": [
+						"Requests - write"
+					]
+				}
+			},
+			"fireEvents": {
+				"create": "event-data-request-created",
+				"update": "event-data-request-updated"
+			},
+			"forcedCriteria": [
+				{
+					"f": "peopleObjLink.people",
+					"op": "ex",
+					"v": ""
+				}
+			],
+			"properties": {
+				"peopleObjLink": {
+					"title": "Osoba",
+					"transCode": "schema.people.title",
+					"type": "object",
+					"properties": {
+						"people": {
+							"transCode": "schema.people.title",
+							"type": "object",
+							"required": true,
+							"objectLink2": {
+								"schema": "uri://registries/people#views/fullperson/view",
+								"fields": {
+									"surName": "baseData.surName",
+									"name": "baseData.name",
+									"bornNumber": "baseData.bornNumber"
+								}
+							}
+						}
+					}
+				},
+				"baseData":{
+					"extends": "uri://registries/people#blocks/person",
+					"properties": {
+						"bornNumber": {
+							"required": false
+						},
+						"name": {
+							"required": false
+						},
+						"surName": {
+							"required": false
+						},
+						"nationality": {
+							"required": false
+						}
+					}
+				},
+				"contactInfo":{
+					"extends": "uri://registries/people#blocks/contactInfo",
+					"properties": {
+						"street": {
+							"required": false
+						},
+						"houseNumber": {
+							"required": false
+						},
+						"city": {
+							"required": false
+						},
+						"zipCode": {
+							"required": false
+						},
+						"country": {
+							"required": false
+						}
+					}
+				},
+				"bankInfo": {
+					"$ref": "uri://registries/people#blocks/bankInfo"
+				},
+				"photoInfo":{
+					"$ref": "uri://registries/people#blocks/photoInfo"
+				},
+				"hockeyPlayerInfo":{
+					"$ref": "uri://registries/people#blocks/hockeyPlayerInfo"
+				},
+				"membershipFeeInfo": {
+					"$ref": "uri://registries/people#blocks/membershipFeeInfo"
+				},
+				"otherInfo":{
+					"$ref": "uri://registries/people#blocks/otherInfo"
+				},
+				"attachments": {
+					"$ref": "uri://registries/generalRequests#blocks/attachments"
+				},
+				"requestData": {
+					"$ref": "uri://registries/generalRequests#blocks/requestData"
+				}
+			}
+		}
+	},
+	"views": {
+		"dataChangeApplicant": {
+			"new" : {
+				"$ref": "uri://registries/dataChangeRequests#views/dataChangeApplicant/view"
+			},
+			"view" : {
+				"extends": "uri://registries/dataChangeRequests#models/dataChange",
+				"properties": {
+					"requestData": null
+				}
+			},
+			"search" : {
+				"extends": "uri://registries/dataChangeRequests#models/dataChange",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2FdataChangeRequests~23views~2FdataChangeApplicant/{{model.id}}"
+						}
+					}
+				],
+				"properties": {
+					"photoInfo": null
+				},
+				"listFields": [
+					{
+						"field": "requestData.setupDate",
+						"transCode": "schema.requests.basedata.setupDate"
+					},
+					{
+						"field": "baseData.surName",
+						"title": "Priezvisko",
+						"transCode": "schema.people.baseData.surName"
+					},
+					{
+						"field": "baseData.name",
+						"title": "Meno",
+						"transCode": "schema.people.baseData.name"
+					},
+					{
+						"field": "requestData.applicant",
+						"transCode": "schema.requests.basedata.applicant"
+					},
+					{
+						"field": "requestData.status",
+						"transCode": "schema.requests.basedata.status"
+					}
+				]
+			}
+		},
+		"dataChangeSolver": {
+			"extends": "uri://registries/dataChangeRequests#views/dataChangeApplicant",
+			"new": null,
+			"view": {
+				"$ref": "uri://registries/dataChangeRequests#models/dataChange"
+			},
+			"search": {
+				"extends": "uri://registries/dataChangeRequests#views/dataChangeApplicant/search",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2FdataChangeRequests~23views~2FdataChangeSolver/{{model.id}}"
+						}
+					}
+				]
+			}
+		}
+	}
+}
