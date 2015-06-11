@@ -1,0 +1,30 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	<div id="portal-main-container">
+		<div id="portal-header-container">
+			<header id="portal-main-header">
+				<h1>Česká asociace hokejistů</h1>
+				<img class="portal-logo" src="portal/img/portal-logo.png" alt="logo" title="SLOVENSKÝ ZVÄZ HÁDZANEJ" />
+			</header>
+		</div>
+		<div id="portal-menu-panel-container">
+			<div id="portal-menu-panel" portal-menu-render></div>
+		</div>
+		<div id="portal-content-container">
+			<div id="portal-main-content">
+				<article id="portal-article" xpsui-portal-article-content-edit ng-model="model.data">
+				</article>
+			</div>
+		</div>
+	</div>
+	<div id="footer-container">
+		<header id="main-footer">
+			Unionsoft, s.r.o, Všetky práva vyhradené
+		</header>
+	</div>
