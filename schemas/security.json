@@ -16,6 +16,33 @@
 				"type": "boolean",
 				"default": true
 			},
+
+			"Registry People": {
+				"title": "Zobrazenie registra Osoby",
+				"type": "boolean",
+				"default": true
+			},
+			"Registry Fees": {
+				"title": "Zobrazenie registra Poplatkov",
+				"type": "boolean",
+				"default": true
+			},
+			"Registry Requests": {
+				"title": "Zobrazenie registra ziadosti",
+				"type": "boolean",
+				"default": true
+			},
+			"Registry Organization": {
+				"title": "Zobrazenie registra Organizácií",
+				"type": "boolean",
+				"default": true
+			},
+			"Registry Massmail":{
+				"title":"Posielanie hromadných e-mailov",
+				"type": "boolean",
+				"default": true
+			},
+
 			"Registry - read": {
 				"title": "Zobrazenie dát registrov",
 				"type": "boolean",
@@ -33,6 +60,26 @@
 			},
 			"Security - write": {
 				"title": "Modifikácia dát zabezpečenia",
+				"type": "boolean",
+				"default": true
+			},
+			"Portal - write": {
+				"title": "Modifikácia portalu",
+				"type": "boolean",
+				"default": true
+			},
+			"Requests - write": {
+				"title": "Zadávanie žiadostí",
+				"type": "boolean",
+				"default": true
+			},
+			"Requests - read": {
+				"title": "Čítanie žiadostí",
+				"type": "boolean",
+				"default": true
+			},
+			"Requests - solve": {
+				"title": "Riešenie žiadostí",
 				"type": "boolean",
 				"default": true
 			}
