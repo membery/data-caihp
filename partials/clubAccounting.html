@@ -78,7 +78,9 @@
 									<th>{{'accounting.info.company.fees.topay.value'|translate}}</th>
 									<th>{{'accounting.info.company.fees.overdue' |translate}}</th>
 									<th>{{'accounting.info.company.fees.overdue.value' |translate}}</th>
-									<th>Credit</th>
+									<th>{{'accounting.info.company.fees.credit' | translate}}</th>
+									<th>{{'accounting.info.company.fees.assocMember' | translate}}</th>
+
 								</tr>
 							</thead>
 							<tbody>
@@ -93,6 +95,7 @@
 										<td width="10%">{{line.feesOverdue}}</td>
 										<td width="10%">{{line.feesOverdueValue}}</td>
 										<td width="10%">{{line.credit}}</td>
+										<td width="10%">{{'schema.people.stateOfPerson.' + line.assocMember | translate}}</td>
 
 								</tr>
 

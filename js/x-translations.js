@@ -72,16 +72,21 @@ angular.module('x-registries')
 		"menu.requests.search.change.lower.level":"Hľadať zmenu údajov",
 		"menu.portal.edit.lower.level":"Editovať",
 		"menu.portal.menu.lower.level":"Menu",
+		"menu.portal.list.lower.level":"Zoznam článkov",
 
 		"accounting.info.user.info":"Sumárne informácie",
 		"accounting.info.user.payments":"Prijaté platby",
 		"accounting.info.user.fees.unpaid":"Nezaplatené poplatky",
 		"accounting.info.user.fees.history":"Zaplatené poplatky",
 
-		"accounting.info.company.fees.topay": "Poplatky k na zaplatenie",
-		"accounting.info.company.fees.topay.value": "v sume",
+		"accounting.info.company.fees.topay": "Poplatky na zaplatenie",
+		"accounting.info.company.fees.topay.value": "V sume",
 		"accounting.info.company.fees.overdue": "Poplatky po splatnosti",
-		"accounting.info.company.fees.overdue.value": "v sume",
+		"accounting.info.company.fees.overdue.value": "V sume",
+		"accounting.info.company.fees.credit": "Kredit",
+		"accounting.info.company.fees.assocMember": "Člen asociácie",
+		"accounting.info.club.user.status":"Bilancia členov",
+
 
 		"schema.people.personalProfile":"Môj profil",
 		"schema.people.membershipFeeInfo.title":"Členské príspevky",
@@ -389,6 +394,7 @@ angular.module('x-registries')
 		"menu.requests.search.change.lower.level":"Hledat změnu údajů",
 		"menu.portal.edit.lower.level":"Editovat",
 		"menu.portal.menu.lower.level":"Menu",
+		"menu.portal.list.lower.level":"Seznam článků",
 
 		"accounting.info.user.info":"Sumárne informace",
 		"accounting.info.user.payments":"Přijaté platby",
@@ -396,9 +402,11 @@ angular.module('x-registries')
 		"accounting.info.user.fees.history":"Zaplacené poplatky",
 		"accounting.info.club.user.status":"Bilance členú",
 		"accounting.info.company.fees.topay": "Poplatky k zaplaceni",
-		"accounting.info.company.fees.topay.value": "v sume",
+		"accounting.info.company.fees.topay.value": "V částce",
 		"accounting.info.company.fees.overdue": "Poplatky po splatnosti",
-		"accounting.info.company.fees.overdue.value": "v sume",
+		"accounting.info.company.fees.overdue.value": "V částce",
+		"accounting.info.company.fees.credit": "Kredit",
+		"accounting.info.company.fees.assocMember": "Člen asociace",
 
 		"schema.mailTemplate.basedata.name":"Název šablony",
 		"schema.mailTemplate.basedata.subject":"Predment mailu",
@@ -749,6 +757,7 @@ $translateProvider.translations('en', {
 		"menu.portal.title":"Web Portal",
 		"menu.portal.edit.lower.level":"Edit",
 		"menu.portal.menu.lower.level":"Menu",
+		"menu.portal.list.lower.level":"Article list",
 
 		"menu.fees.new.lower.level":"New Fee",
 		"menu.fees.search.lower.level":"Fee Search",
@@ -769,6 +778,18 @@ $translateProvider.translations('en', {
 		"menu.requests.search.registration.lower.level":"Registration search",
 		"menu.requests.new.change.lower.level":"Data change",
 		"menu.requests.search.change.lower.level":"Data change search",
+
+		"accounting.info.user.info":"Sumární informace",
+		"accounting.info.user.payments":"Přijaté platby",
+		"accounting.info.user.fees.unpaid":"Nezaplacené poplatky",
+		"accounting.info.user.fees.history":"Zaplacené poplatky",
+		"accounting.info.club.user.status":"Bilance členú",
+		"accounting.info.company.fees.topay": "Poplatky k zaplaceni",
+		"accounting.info.company.fees.topay.value": "V částce",
+		"accounting.info.company.fees.overdue": "Poplatky po splatnosti",
+		"accounting.info.company.fees.overdue.value": "V částce",
+		"accounting.info.company.fees.credit": "Kredit",
+		"accounting.info.company.fees.assocMember": "Člen asociace",
 
 		"schema.fees.title":"Fee",
 		"schema.fees.baseData":"Basic information",
