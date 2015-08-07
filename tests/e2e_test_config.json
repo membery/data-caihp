@@ -1,0 +1,36 @@
+{
+	"schemas": {
+		"people": {
+			"new": "http://localhost:3000/schema/compiled/uri~3A~2F~2Fregistries~2Fpeople~23views~2Ffullperson~2Fnew",
+			"search": "http://localhost:3000/schema/compiled/uri~3A~2F~2Fregistries~2Fpeople~23views~2Ffullperson~2Fnew",
+			"newSchema": "",
+			"searchSchema":"",
+			"listNo": 0,
+			"createNo": 0,
+			"findNo": 1,
+			"dependencies": ["organization"]
+		},
+		"organization": {
+			"new": "http://localhost:3000/schema/compiled/uri~3A~2F~2Fregistries~2Forganization~23views~2Forganization~2Fnew",
+			"search": "http://localhost:3000/schema/compiled/uri~3A~2F~2Fregistries~2Forganization~23views~2Forganization~2Fnew",
+			"newSchema": "",
+			"searchSchema":"",
+			"listNo": 2,
+			"createNo": 0,
+			"findNo": 1,
+			"dependencies": []
+		}
+	},
+	"notUsed": {
+		"fee": {
+			"new": "http://localhost:3000/schema/compiled/uri~3A~2F~2Fregistries~2Ffees~23views~2Ffee~2Fnew",
+			"search": "http://localhost:3000/schema/compiled/uri~3A~2F~2Fregistries~2Ffees~23views~2Ffee~2Fnew",
+			"newSchema": "",
+			"searchSchema":"",
+			"listNo": 1,
+			"createNo": 0,
+			"findNo": 1,
+			"dependencies": ["people"]
+		}
+	}
+}
