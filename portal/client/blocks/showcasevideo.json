@@ -1,0 +1,23 @@
+{
+	"meta" : {
+		"name" : "showcasevideo",
+		"element" : "<div></div>",
+		"type" : "showcasevideo",
+		"resolver" : "category",
+		"title" : "Rotujúca sekcia s videami",
+		"desc" : "Najhorúcejšie videa v prelínajúcom sa zobrazení",
+		"icon" : "img/block-videoshowcase.svg"
+	},
+	"data" : {
+		"tags" : []
+	},
+	"config" : {
+		"displayBlocks" : [
+			"title",
+			"abstract",
+			"content",
+			"video"
+		],
+		"thumbnailBlock" : "video"
+	}
+}

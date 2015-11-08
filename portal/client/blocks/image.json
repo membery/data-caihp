@@ -3,15 +3,15 @@
 		"name": "imageFullWidth",
 		"element": "<div></div>",
 		"type": "image",
-		"title": "Obrázok na  celú šírku",
-		"desc": "Obrázok s rozlíšením 1400px",
+		"title": "Obrázok na celú šírku",
+		"desc": "Obrázok s rozlíšením 1200px",
 		"icon": "img/block-image.svg"
 	},
 	"data": {
 		"img": ""
 	},
 	"config": {
-		"width": 1400,
-		"height": 540
+		"width": 1200,
+		"height": 470
 	}
 }

@@ -1,13 +1,28 @@
-<div class="x-portal-widget-showcase-view">{% for article in data.articles %}
-	<article class="showcase-item-{{ article.id }}">
-	{% if article.thumbnail && article[article.thumbnail] && article[article.thumbnail].img %}
-		<div class="x-portal-widget-showcase-view-image" style="background: url('{{ article[article.thumbnail].img|safe }}'); background-size: cover; background-repeat: no-repeat; height: 470px;">
-			<div class="x-portal-widget-showcase-view-textblock">
-				<a>{{ article.title|safe }}</a>
-				{{ article.abstract|safe }}
-			</div>
-		</div>
-	{% endif %}
-	</article>
-{% endfor %}
+<div class="x-portal-widget-showcase-title"></div>
+<div class="x-portal-widget-showcase-view">
+	{% for article in data.articles %}
+		<article class="showcase-item-{{ article.id }}">
+			{% if article.thumbnail && article[article.thumbnail] && article[article.thumbnail].img %}
+				<div class="x-portal-widget-showcase-view-image" style="background: url('{{ article[article.thumbnail].img|safe }}'); background-size: cover; background-repeat: no-repeat; height: 470px;">
+					<div class="x-portal-widget-showcase-view-cover">
+						<img src="/portal/img/logoMSW.png">
+					</div>
+					<div class="x-portal-widget-showcase-view-textblock">
+						<a href="/article/{{ article.id }}">{{ article.title|safe }}</a>
+					</div>
+				</div>
+			{% endif %}
+		</article>
+	{% endfor %}
+</div>
+<div class="x-portal-widget-showcase-navigation">
+	<a href="#" class="prev">
+	</a>
+	<div>
+		{% for article in data.articles %}
+			<a href="#" class="item"></span>
+		{% endfor %}
+	</div>
+	<a href="#" class="next">
+	</a>
 </div>

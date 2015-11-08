@@ -1,10 +1,16 @@
-<div class="x-portal-widget-category">{% for article in data.articles %}
+<div class="x-portal-widget-category">
+	{% for article in data.articles %}
 	<article>
-			{% if article.thumbnail && article[article.thumbnail] && article[article.thumbnail].img %}<img src="{{ article[article.thumbnail].img|safe }}">{% endif %}
-			<div >
-				<div><a href="/article/{{ article.id }}">{{ article.title|safe }}</a></div>
-				<div>{{ article.abstract|safe }}</div>
-				<div>{{ article.content|safe }}</div>
-			<div>
+		{% if article.thumbnail && article[article.thumbnail] && article[article.thumbnail].img %}<img src="{{ article[article.thumbnail].img|safe }}">{% endif %}
+		<div >
+			<div><a href="/article/{{ article.id }}">{{ article.title|safe }}</a></div>
+			<div>{{ article.content|safe }}</div>
+		<div>
 	</article>
-{% endfor %}</div>
+	{% endfor %}
+</div>
+<div style="text-align: center; clear: both;" class="x-portal-widget-category-navigation" data-nextpage="{{data.nextPage}}">
+	<a><i class="fa fa-chevron-left x-portal-widget-category-prev-btn"></i></a>
+	&nbsp;&nbsp;
+	<a><i class="fa fa-chevron-right x-portal-widget-category-next-btn"></i></a>
+</div>
