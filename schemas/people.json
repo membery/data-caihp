@@ -102,7 +102,7 @@
 					"required": true
 				},
 				"country": {
-					"type": "string",
+					"extends": "uri://registries/nationality#country",
 					"title": "Štát",
 					"transCode": "schema.people.contactInfo.country",
 					"required": true
@@ -488,7 +488,24 @@
 		"personalProfile": {
 			"extends":"uri://registries/people#models/person",
 			"title":"Môj profil",
-			"transCode":"schema.people.personalProfile"
+			"transCode":"schema.people.personalProfile",
+			"security": {
+				"create": {
+					"static": [
+						"System User"
+					]
+				},
+				"read": {
+					"static": [
+						"System User"
+					]
+				},
+				"modify": {
+					"static": [
+						"System User"
+					]
+				}
+			}
 		}
 	},
 

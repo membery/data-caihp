@@ -42,6 +42,11 @@
 				"type": "boolean",
 				"default": true
 			},
+			"Registry Partner":{
+				"title":"Zobrazenie registra Partnerov",
+				"type": "boolean",
+				"default": true
+			},
 
 			"Registry - read": {
 				"title": "Zobrazenie dát registrov",
@@ -80,6 +85,11 @@
 			},
 			"Requests - solve": {
 				"title": "Riešenie žiadostí",
+				"type": "boolean",
+				"default": true
+			},
+			"Partner - read": {
+				"title": "Partneri na čítanie",
 				"type": "boolean",
 				"default": true
 			}

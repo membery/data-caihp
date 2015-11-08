@@ -19,7 +19,6 @@
 	"commonEnums.json",
 	"commonTypes.json",
 	"generalRequests.json",
-	"registrationRequests.json",
-	"dataChangeRequests.json",
-	"portalArticles.json"
+	"portalArticles.json",
+	"partners.json"
 ]

@@ -104,17 +104,5 @@
 				]
 			}
 		}
-	},
-
-
-
-	"properties": {
-		"baseData": {
-			"title": "ZÁKLADNÍ INFORMACE",
-			"type": "object",
-			"properties": {
-
-			}
-		}
 	}
 }

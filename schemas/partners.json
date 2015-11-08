@@ -1,0 +1,244 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "uri://registries/partners#",
+	"new": {
+		"title": "Partner",
+		"transCode":"schema.partner.title",
+		"table": "partners",
+		"security": {
+			"create": {
+				"static": [
+					"Registry - write"
+				]
+			},
+			"read": {
+				"static": [
+					"Registry - read"
+				]
+			},
+			"modify": {
+				"static": [
+					"Registry - write"
+				]
+			}
+		},
+		"properties": {
+			"baseData": {
+				"title": "Základné údaje",
+				"transCode":"schema.partner.baseData",
+				"type": "object",
+				"properties": {
+					"name": {
+						"title": "Názov organizacie",
+						"transCode": "schema.partner.baseData.name",
+						"type": "string",
+						"required": true
+					},
+					"shown": {
+						"extends":"uri://registries/commonenums#blocks/boolean",
+						"title": "Zobrazovať?",
+						"transCode": "schema.partner.baseData.shown"
+					},
+					"text": {
+						"transCode": "schema.partner.baseData.text",
+						"type": "string",
+						"required": true,
+						"render": {
+							"component": "psui-textarea"
+						}
+					}
+				}
+			},
+			"logoInfo": {
+				"title": "Logo",
+				"transCode": "schema.partner.logoInfo",
+				"type": "object",
+				"properties": {
+					"photo": {
+						"type": "string",
+						"title": "Logo",
+						"transCode": "schema.partner.logo",
+						"render": {
+							"component": "psui-uploadable-image",
+							"height": 300,
+							"width": 300
+						}
+					}
+				}
+			},
+			"attachments": {
+				"type": "object",
+				"transCode": "schema.requests.attachments",
+				"properties": {
+					"attachments": {
+						"title": "Prílohy",
+						"transCode": "schema.requests.attachments",
+						"type": "array",
+						"items": {
+							"file": {
+								"title": "Súbor",
+								"transCode": "schema.requests.file",
+								"required": false,
+								"render": {
+									"component": "xpsui-uploadable-file"
+								},
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"size": {
+										"type": "number"
+									},
+									"createdOn": {
+										"type": "string"
+									},
+									"mime": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"view": {
+		"title": "Partner",
+		"transCode":"schema.partner.title",
+		"table": "partners",
+		"security": {
+			"$ref": "uri://registries/partners#new/security"
+		},
+		"properties": {
+			"$ref": "uri://registries/partners#new/properties"
+		}
+	},
+	"search": {
+		"title": "Partner",
+		"transCode":"schema.partner.title",
+		"table": "partners",
+		"security": {
+			"$ref": "uri://registries/partners#new/security"
+		},
+		"clientActions": [
+			{
+				"__DIRECTIVE__": "schema-redirect-link",
+				"title": "Zobraziť",
+				"params": {
+					"path": "/registry/view/uri~3A~2F~2Fregistries~2Fpartners~23/{{model.id}}"
+				}
+			}
+		],
+		"properties": {
+			"extends": "uri://registries/partners#new/properties",
+			"logoInfo":null
+		},
+		"listFields": [
+			{
+				"field": "baseData.name",
+				"title": "Názov",
+				"transCode": "schema.partner.baseData.name"
+			},
+			{
+				"field": "baseData.shown",
+				"title": "Zobrazovat",
+				"transCode": "schema.partner.baseData.shown"
+			}
+		]
+	},
+	"views": {
+		"partners-km": {
+			"view": {
+				"extends": "uri://registries/partners#view",
+				"security": {
+					"create": {
+						"static": [
+							"Registry - write"
+						]
+					},
+					"read": {
+						"static": [
+							"Partner - read"
+						]
+					},
+					"modify": {
+						"static": [
+							"Registry - write"
+						]
+					}
+				},
+				"properties":{
+					"baseData": {
+						"properties": {
+							"name": {
+								"readOnly": true
+							},
+							"text": {
+								"readOnly": true
+							},
+							"shown": null
+						}
+					},
+					"logoInfo": {
+						"properties": {
+							"photo": {
+								"readOnly": true
+							}
+						}
+					},
+					"attachments": {
+						"properties": {
+							"attachments": {
+								"readOnly": true
+							}
+						}
+					}
+				}
+			},
+			"search": {
+				"extends": "uri://registries/partners#search",
+				"security": {
+					"create": {
+						"static": [
+							"Registry - write"
+						]
+					},
+					"read": {
+						"static": [
+							"Partner - read"
+						]
+					},
+					"modify": {
+						"static": [
+							"Registry - write"
+						]
+					}
+				},
+				"forcedCriteria": [
+					{
+						"f": "baseData.shown",
+						"op": "eq",
+						"v": "TRUE"
+					}
+				],
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Fpartners~23views~2Fpartners-km/{{model.id}}"
+						}
+					}
+				],
+				"listFields": [
+					{
+						"field": "baseData.name",
+						"title": "Názov",
+						"transCode": "schema.partner.baseData.name"
+					}
+				]
+			}	
+		}
+	}
+}
