@@ -35,6 +35,25 @@
 					"type": "string",
 					"required": true
 				},
+				"domain": {
+					"transCode": "schema.requests.basedata.domain",
+					"type": "string",
+					"required": true,
+					"enum": [
+						"general",
+						"business",
+						"legal"
+					],
+					"enumTransCodes": [
+						"schema.requests.basedata.domain.general",
+						"schema.requests.basedata.domain.business",
+						"schema.requests.basedata.domain.legal"
+					],
+					"render": {
+						"component": "psui-selectbox",
+						"searchable": true
+					}
+				},
 				"text": {
 					"transCode": "schema.requests.basedata.text",
 					"type": "string",
@@ -91,6 +110,12 @@
 					"type": "array",
 					"items": {
 						"file": {
+							"title": "Súbor",
+							"transCode": "schema.requests.file",
+							"required": false,
+							"render": {
+								"component": "xpsui-uploadable-file"
+							},
 							"properties": {
 								"name": {
 									"type": "string"
@@ -105,10 +130,6 @@
 									"type": "string"
 								}
 							}
-						},
-						"required": false,
-						"render": {
-							"component": "xpsui-uploadable-file"
 						}
 					}
 				}

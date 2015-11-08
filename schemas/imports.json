@@ -29,7 +29,7 @@
 					}
 				},
 				"type": {
-					"title": "Fotografia",
+					"title": "Typ suboru",
 					"transCode": "schema.imports.type",
 					"type": "string",
 					"enum": [
