@@ -6,5 +6,9 @@
 	"image650.json",
 	"category.json",
 	"gallery.json",
-	"showcase.json"
+	"showcase.json",
+	"showcasevideo.json",
+	"video.json",
+	"fileList.json",
+	"match-results.json"
 ]

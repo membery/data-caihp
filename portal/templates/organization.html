@@ -1,0 +1,627 @@
+<!-- index -->
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>MSW2016</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="copyright" content="Unionsoft" />
+	<meta name="author" content="" />
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="/portal/css/standalone.css">
+	<link rel="stylesheet" type="text/css" href="/portal/css/portal.css">
+	<link rel="stylesheet" type="text/css" href="/portal/css/font-awesome.min.css">
+	<link rel="icon" href="/portal/img/favicon2.png" type="image/x-icon">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="portal-main-container">
+		<div id="portal-header-container">
+			<header id="portal-main-header">
+				<div class="left">
+					<a href="http://www.ihf.info">
+						<img class="portal-logo" src="/portal/img/logoIHF.png" width="75" alt="logo" title="ihf" />
+					</a>
+					<a href="http://www.slovakhandball.sk">
+						<img class="portal-logo" src="/portal/img/logoSZH.png" width="120" alt="logo" title="szh" />
+					</a>
+				</div>
+				
+				<div class="right">
+					<nav id="portal-menu-panel-container">
+						<!-- {% block menu %} -->
+							<div id="portal-menu-panel">
+								<ul>
+									<!-- <li class="portal-menu-entry">
+										<a href="#tournament">TOURNAMENT</a>
+									</li> -->
+									<li class="portal-menu-entry lvl1">
+										<a style="">ORGANIZATION</a>
+									</li>
+									<ul>
+										<li class="portal-menu-entry">
+											<a href="#slovakia">SLOVAKIA-BRATISLAVA</a>
+										</li>
+									
+										<li class="portal-menu-entry">
+											<a href="#venues">VENUES</a>
+										</li>
+									
+										<li class="portal-menu-entry">
+											<a href="#accomodation">ACCOMODATION</a>
+										</li>
+									
+										<li class="portal-menu-entry">
+											<a href="#accreditation">ACCREDITATION</a>
+										</li>
+									
+										<li class="portal-menu-entry">
+											<a href="#contact">CONTACT</a>
+										</li>
+										<li class="portal-menu-entry"><a href="https://www.facebook.com/SlovenskyZvazHadzanej" target="_new"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+									</ul>
+								</ul>
+							</div>
+						<!-- {% endblock menu %} -->
+					</nav>
+				</div>
+				
+			</header>
+		</div>
+		<div id="mobile-menu-toggler">
+			<a href="" class="toogle-menu" >
+				<i class="fa fa-align-justify"></i>
+			</a>
+		</div>
+		<div id="portal-content-container">
+			<div id="portal-main-content">
+				{% for widget in article.data %}
+					<article class="portal-article {{ widget.meta.type }} portal-article-{{ widget.meta.name }} {{ widget.css.cssClass }}">
+						{% set templatePath = "widgets/" + widget.meta.type + ".widget" %}
+						{% include templatePath with widget only %}
+					</article>
+				{% endfor %}
+				<article id="slovakia" class="portal-article headline portal-article-headline">
+					<div class="headline container">
+						<h1>Welcome to Slovakia, welcome to Bratislava!</h1>
+						<span>
+							Bratislava is one of the youngest capitals in Europe. Nevertheless, it is a city with a rich history of a royal coronation town, at a time when it was called Presporok (Pozsony, Pressburg). Today, Bratislava is a dynamically developing capital, full of young and charming people, thanks to whom it has a pleasant and unique atmosphere.
+							<br><br>
+							Its location right in the heart of Europe, on the banks of the River Danube, has made it an important trade crossroads and a meeting place for many cultures from the very beginning. Whether on trade routes which crossed here or the proximity of the River Danube, many who passed through the city stopped and stayed there for some time. Many nations and nationalities have lived in Bratislava. They say that every “Presporok”-born man speaks four languages​​: Slovak, German, Hungarian and Mishmash. 
+							The mix of cultures and people who have lived in Bratislava did not leave a trace only in the language but also in the customs, cuisine, and lifestyle. Just like the people of Vienna, also Bratislavans like walking in downtown Bratislava. This part of the city is nicknamed Korzo. Leading from Michael's Tower to the Danube, the Korzo area is a place where people meet, regardless of their age, and drink their favourite coffee.
+							<br><br>
+							During its long history, Bratislava has experienced a period of prosperity and decline. The period of Maria Theresa’s reign is considered the golden era of the city. The monarch was crowned Queen of Hungary here, in St. Martin’s Cathedral in Bratislava.
+							<br><br>
+							In addition to culture and friendly urban environment, Bratislava is still full of history. Many monuments and historical urban nooks attract the attention of a wide range of people. The most visited monuments of Bratislava include Bratislava Castle, St. Martin’s Cathedral, Old Town Hall, Primate's Palace, Michael's Gate, Grassalkovich Palace, Mirbach Palace, House of the Good Shepherd, Devin Castle, and Slavin.
+							<br><br>
+							Today, the town is experiencing a great boom again. Bratislava is the political, business, and educational centre of Slovakia. It is visited by many tourists, businessmen, and investors, attracted by the mystery of the old and unknown town, and by the lively atmosphere, mainly thanks to the young people who live there.
+							<br><br>
+							You will find a lot of towns in Europe, but only few of them have their own unique atmosphere. Bratislava will remain in your memory forever.
+							<br><br>
+							The capital is one of the biggest centres of sports activities in Slovakia. It is one of the most frequent organisers and a place for many sporting events of national and international importance. It was Bratislava where the European Figure Skating Championships were held at the beginning of the year, and the city will host a youth handball event for the fourth time this summer.
+							<br><br>
+							From 19 until 31 July 2016, 24 girls teams will face off at the 2016 Women's Youth Handball World Championship. More than 600 people will be involved, including players, realisation teams, delegates, officials, support staff, and, of course, the organisers. NTC Aegon arena and Ondreja Nepela arena in Bratislava will be the centre stage. We have 92 matches ahead of us, streamed live on this page for all handball fans. 
+							<br><br>
+							The Slovak Republic is a landlocked country in Central Europe with an area of ​​49,036 km2. It is characterised by mountainous landscape in the north and lowlands in the south. The population is about 5,430,000. The Slovak climate lies between the temperate and continental climate zones, characterized by strong temperature differences between summer and winter and alternating 4 seasons. The average annual temperature is around 9.9°C. It is bordered by the Czech Republic, Austria, Poland, Ukraine, and Hungary. Bratislava is the capital and the most populated city.
+							The Slovak Republic is a parliamentary democracy, and the official language is Slovak. Since 1 May 2004, Slovakia has been a member of the European Union, and from 21 December 2007, it has been a member of the Schengen area. Since 1 January 2009, Slovakia has been the 16th member of the European Monetary Union – the euro area, with the euro, official currency, replacing Slovak koruna.
+							And let’s not forget! Slovakia, together with Bratislava, will have the Presidency of the Council of the European Union in 2016 within the presidency trio where it will be joined by the Netherlands and Malta. 
+							<br><br>
+							<b>Welcome to Slovakia !  Welcome to Bratislava !  Lets go on handball !</b>
+							<br><br>
+							<p style="text-align: right;">(Source: <a href="http://www.bratislava.sk">www.bratislava.sk</a>)</p>
+						</span>
+					</div>
+				</article>
+				<article id="venues" class="portal-article venues portal-article-venues">
+					<div class="venues container">
+						<h1>VENUES</h1>
+						<h2>PLAYING HALLS</h2>
+						<div class="flex-col">
+							<div class="flex-row">
+								<div class="center" ><img src="/portal/img/aegon-arena.jpg" width="100%" height="250"></div>
+								<div>
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.2551901956977!2d17.131962315734683!3d48.16316275735744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8ec9fd881403%3A0x84cd348f47dd8ef9!2sPr%C3%ADkopova+3255%2F6%2C+831+03+Bratislava!5e0!3m2!1ssk!2ssk!4v1456221378867" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+								</div>
+								<div>
+									<p><b>AEGON Aréna NTC (National Tennis Centre)</b></p>
+									<span>Národné tenisové centrum, a.s.<br>
+									Príkopova 6, 831 03 Bratislava - Nové Mesto<br>
+									Slovak Republic <br><br>
+									Tel.: <a href="tel:+421 2 4920 9888">+421 2 4920 9888</a>, - <a href="tel:+421 2 4920 9890">9890</a> <br>
+									Mobile: <a href="tel:+421 903 221 552">+421 903 221 552</a><br><br>
+									E-mail: <a href="mailto:lucia.cvengrosova@stz.sk">lucia.cvengrosova@stz.sk</a><br><br>
+									www.ntc.sk</span>
+								</div>
+							</div>
+							<div class="flex-row">
+								<div class="center"><img src="/portal/img/o-nepelu.jpg" width="100%" height="250"></div>
+								<div>
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.432252573541!2d17.133224115734585!3d48.15974985759536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8ecafe670bd1%3A0xa0bc66c8489335e7!2sOdboj%C3%A1rov+1295%2F9%2C+831+04+Bratislava!5e0!3m2!1ssk!2ssk!4v1456221422779" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+								</div>
+								<div>
+									<p><b>Winter stadium Ondreja Nepelu - Nepela Aréna</b></p>
+									<span>Zimný štadión Ondreja Nepelu (STARZ)<br>
+									Odbojárov 9, 831 04 Bratislava - Nové Mesto<br>
+									Slovak Republic <br><br>
+									Tel.: <a href="tel:+421 2 4910 3202">+421 2 4910 3202</a> - Nepela Aréna <br>
+									Tel.: <a href="tel:+421 2 4920 9621">+421 2 4920 9621</a> - Mgr. Michaela Velická<br><br>
+									E-mail: <a href="mailto:info@starz.sk">info@starz.sk</a><br><br>
+									<a href="http://nepela-arena.eu">www.nepela-arena.eu</a><br>
+									<a href="http://www.starz.sk/vismo/o_utvar.asp?id_org=600167&id_u=1008&p1=1046">www.starz.sk</a></span>
+								</div>
+							</div>
+						</div>
+						<h2>TRAINING HALLS</h2>
+						<div class="flex-col">
+							<div class="flex-row">
+								<div class="center"><img src="/portal/img/mladost.jpg" width="100%" height="250"></div>
+								<div>
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.39733785898!2d17.136004215734506!3d48.16042285754835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8ecba3f8477b%3A0x696672e86ad0cefa!2sTrnavsk%C3%A1+cesta+39%2C+821+08+Bratislava!5e0!3m2!1ssk!2ssk!4v1456221482317" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+								</div>
+								<div>
+									<p><b>Sport hall MLADOSŤ</b></p>
+									<span>Športová hala Mladosť, s.r.o.<br>
+									Trnavská 39, 831 04 Bratislava<br>
+									Slovak Republic <br><br>
+									Tel.: <a href="tel:+421 2 4920 0311">+421 2 4920 0311</a><br>
+									Fax: <a href="tel:+421 2 4437 2888">+421 2 4437 2888</a><br><br>
+									E-mail: <a href="mailto:shmladost@shmladost.sk">shmladost@shmladost.sk</a><br><br>
+									<a href="http://shmladost.sk">www.shmladost.sk</a></span>
+								</div>
+							</div>
+							<div class="flex-row">
+								<div class="center"><img src="/portal/img/dom-sportu.jpg" width="100%" height="250"></div>
+								<div>
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.1153089622576!2d17.135578915734694!3d48.165858857169425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8ec8400e65e3%3A0x460ccda3114a14eb!2sJun%C3%A1cka+2951%2F6%2C+831+04+Bratislava!5e0!3m2!1ssk!2ssk!4v1456221516248" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+								</div>
+								<div>
+									<p><b>Sport hall DOM ŠPORTU</b></p>
+									<span>Športová hala Dom Športu<br>
+									Junácka 6, 832 80 Bratislava<br>
+									Slovak Republic <br><br>
+									Tel.: <a href="tel:+421 2 4924 9300">+421 2 4924 9300</a>, - <a href="tel:+421 2 4924 9394">394</a><br>
+									Mobil: <a href="tel:+421 918 047 105">+421 918 047 105</a><br><br>
+									E-mail: <a href="mailto:hospodar@sztk.sk">hospodar@sztk.sk</a><br><br>
+									<a href="http://www.sztk.sk/index.php?option=com_content&view=article&id=51:bratislava&catid=3:nebytove-priestory&Itemid=57">www.sztk.sk</a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article id="accomodation" class="portal-article accomodation portal-article-accomodation">
+					<div class="accomodation container">
+						<h1>ACCOMODATION</h1>
+						<h2>TEAMS</h2>
+						<div class="flex-col">
+							<div class="flex-row">
+								<div class="center"><img src="/portal/img/hotel-bratislava.jpg" width="100%" height="250"></div>
+								<div>
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.728130957914!2d17.16438711573434!3d48.15404635799248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8f2c95065097%3A0x6b045a62006a0153!2sSeber%C3%ADniho+1765%2F9%2C+821+04+Bratislava!5e0!3m2!1ssk!2ssk!4v1456221563747" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+								</div>
+								<div>
+									<p><b>HOTEL BRATISLAVA****</b></p>
+									<span>City Hotel Bratislava, s.r.o.<br>
+									Seberíniho 9, Bratislava - Ružinov<br>
+									Slovak Republic <br><br>
+									Tel.: <a href="tel:+421 2 2060 6100">+421 2 2060 6100</a> - reception <br>
+									Fax: <a href="tel:+421 2 2060 6120">+421 2 2060 6120</a><br><br>
+									E-mail: <a href="mailto:hotelbratislava@hotelbratislava.sk">hotelbratislava@hotelbratislava.sk</a><br><br>
+									<a href="http://hotelbratislava.sk">www.hotelbratislava.sk</a></span>
+								</div>
+							</div>
+							<div class="flex-row">
+								<div class="center"><img src="/portal/img/holiday-inn.jpg" width="100%" height="250"></div>
+								<div>
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.835166708405!2d17.147169715734293!3d48.15198295813635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c892b88f17a2d%3A0xee13a855adb9e52!2sBajkalsk%C3%A1+1496%2F25%2C+821+01+Bratislava!5e0!3m2!1ssk!2ssk!4v1456221596767" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+								</div>
+								<div>
+									<p><b>HOLIDAY INN BRATISLAVA****</b></p>
+									<span>SLOVAKARPATIA HOTEL, a.s.<br>
+									Bajkalská 25/A, 825 03 Bratislava - Ružinov<br>
+									Slovak Republic <br><br>
+									Tel.: <a href="tel:+421 2 4824 5111">+421 2 4824 5111</a> - reception <br>
+									Fax: <a href="tel:+421 2 4824 5112">+421 2 4824 5112</a><br><br>
+									E-mail: <a href="mailto:holidayinn@holidayinn.sk">holidayinn@holidayinn.sk</a><br><br>
+									<a href="http://holidayinn.sk">www.holidayinn.sk</a></span>
+								</div>
+							</div>
+						</div>
+						<h2>IHF OFFICIALS</h2>
+						<div class="flex-col">
+							<div class="flex-row">
+								<div class="center"><img src="/portal/img/ilindner.jpg" width="100%" height="250"></div>
+								<div>
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.590303209306!2d17.12571371573444!3d48.15670325780765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c894aedc2b059%3A0xc1245df22a2ce743!2sMetodova%2C+821+08+Bratislava-Ru%C5%BEinov!5e0!3m2!1ssk!2ssk!4v1456221628709" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+								</div>
+								<div>
+									<p><b>LINDNER HOTEL GALLERY CENTRAL****</b></p>
+									<span>Lindner Hotel Gallery Central<br>
+									Metodova 4, 821 08 Bratislava<br>
+									Slovak Republic <br><br>
+									Tel.: <a href="tel:+421 2 3993 0000">+421 2 3993 0000</a><br>
+									Fax: <a href="tel:+421 2 3993 0001">+421 2 3993 0001</a><br><br>
+									E-mail: <a href="mailto:info.bratislava@lindnerhotels.com">info.bratislava@lindnerhotels.com</a><br><br>
+									<a href="http://www.lindner.de/en/bratislava-hotel-gallery-central/welcome.html">www.lindnerhotels.com/</a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article id="accreditation" class="portal-article accreditation portal-article-accreditation">
+					<div class="accreditation container">
+						<h1>ACCREDITATION</h1>
+						<span>
+							Each person involved in the IHF Women’s Youth World Handball Championship 2016 will receive an accreditation card which must be worn during the entire championships and it has to be clearly visible. Security personnel will control all areas. The accreditation process for media begins on 1 June 2016. 
+							<br><br>
+							The Main Accreditation Centre for media will be established in the Organizing Committee Office in AEGON Arena NTC.
+							<br><br>
+							The Accreditation Centre for IHF officials (judges, delegates, and representatives) will be located at Lindner Hotel Gallery Central. 
+							<br><br>
+							The Accreditation Centre for Teams (players, coaches, doctors, and heads of delegations) will be situated at the hotels where the participants will be staying, i.e. at Hotel Bratislava and Holiday Inn Bratislava
+							<br><br>
+							The accreditation process will be done in two ways. Candidates for accreditation will download the accreditation form and send the completed form to our e-mail address. Once the particular accreditation is approved by the Organizing Committee, an Accreditation Card will be issued and available for collection in the Accreditation Centre based on the candidate’s identification.
+							The second method of accreditation will be possible through an online accreditation system created by us.  
+							<br><br>
+							Further more detailed information will be provided in time by the Organizing Committee on the championship page in this section.
+						</span>
+					</div>
+				</article>
+				<article id="contact" class="portal-article contact portal-article-contact">
+					<div class="contact container">
+						<h1>CONTACT</h1>
+						<div class="flex-col">
+							<div class="flex-row">
+								<div class="center"><img src="/portal/img/szh-contact.jpg" width="100%" height="250"></div>
+								<div>
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.2516933663755!2d17.141423115734614!3d48.16323015735276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8ec7df0e685f%3A0xa7bc1638b1d7bbd8!2zU2xvdmVuc2vDvSB6dsOkeiBow6FkemFuZWo!5e0!3m2!1ssk!2ssk!4v1456221973459" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+								</div>
+								<div>
+									<p><b>Slovak Handball Federation <br>
+									Slovenský Zväz Hádzanej</b></p>
+									<span>Trnavská cesta 37, 831 04 Bratislava 3<br>
+									Slovak Republic <br><br>
+									Tel./Fax: <a href="tel:+421 2 4911 4520">+421 2 4911 4520</a><br>
+									E-mail: <a href="mailto:szh@slovakhandball.sk">szh@slovakhandball.sk</a><br><br>
+									<a href="http://slovakhandball.sk">www.slovakhandball.sk</a><br>
+									<a href="http://facebook.com/SlovenskyZvazHadzanej">www.facebook.com/SlovenskyZvazHadzanej</a></span>
+								</div>
+							</div>
+						</div>
+						<h2>ORGANIZING COMMITTEE OF THE CHAMPIONSHIP</h2>
+						<div class="flex-col">
+							<div class="flex-row">
+								<article>
+									<img src="/portal/img/jaroslav.holesa.jpg" alt="">
+									<span><b><br>Jaroslav Holeša</b><br>
+									President SHF <br><br><br><br><br>
+									<a href="mailto:holesa@slovakhandball.sk">holesa@slovakhandball.sk</a>
+									</span>
+								</article>
+								<article>
+									<img src="/portal/img/peter.brunovsky.jpg" alt="">
+									<span><b><br>Peter Brunovský</b><br>
+									OC President <br><br><br><br>
+									<a href="tel:+421903903228">+421 903 903 228</a><br>
+									<a href="mailto:brunovsky@slovakhandball.sk">brunovsky@slovakhandball.sk</a>
+									</span>
+								</article>
+								<article>
+									<img src="/portal/img/martin.hubina.jpg" alt="">
+									<span><b><br>Martin Hubina</b><br>
+									OC Vice-President <br><br><br><br>
+									<a href="tel:+421911144258">+421 911 144 258</a><br>
+									<a href="mailto:info@world2016.sk">info@world2016.sk</a>
+									</span>
+								</article>
+								<article>
+									<img src="/portal/img/tomas.huska.jpg" alt="">
+									<span><b><br>Tomaš Húska</b><br>
+									OC Marketing cooperation <br><br><br><br>
+									<a href="tel:+421915498564">+421 915 498 564</a><br>
+									<a href="mailto:huska@slovakhandball.sk">huska@slovakhandball.sk</a>
+									</span>
+								</article>
+								<article>
+									<img src="/portal/img/ivan.sabovik.jpg" alt="">
+									<span><b><br>Ivan Sabovík</b><br>
+									OC Secretary General <br><br><br><br>
+									<a href="tel:+421903708275">+421 903 708 275</a><br>
+									<a href="mailto:sabovik@slovakhandball.sk">sabovik@slovakhandball.sk</a>
+									</span>
+								</article>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article id="partners" class="portal-article partners portal-article-partners">
+					<div class="partners container">
+						<h2>IHF PARTNERS:</h2>
+						<div class="flex-col">
+							<div class="flex-row">
+								<div><img src="/portal/img/adidas.png" alt="" width="120"></div>
+								<div><img src="/portal/img/bein.png" alt="" width="120"></div>
+								<div><img src="/portal/img/gerflor.png" alt="" width="150"></div>
+								<div><img src="/portal/img/grundfos.png" alt="" width="290"></div>
+								<div><img src="/portal/img/intersport.png" alt="" width="250"></div>
+								<div><img src="/portal/img/molten.png" alt="" width="160"></div>
+							</div>
+						</div>
+						<h2>SHF PARTNERS:</h2>	
+						<div class="flex-col">
+							<div class="flex-row">
+								<div><img src="/portal/img/molten.png" alt=""></div>
+								<div><img src="/portal/img/sport.sk.png" alt=""></div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<footer>
+					<div class="copyright">
+						<p>Slovak Handball Federation 2016</p>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	//dynamic resize showcase height
+	function changeHeight() {
+		if($(window).width() < 1100 && $(window).width() > 640) {
+			$('.x-portal-widget-showcase-view').height( $(window).width() / 2.34042);
+			$('.x-portal-widget-showcase-view-image').height( $(window).width() / 2.34042);
+		}else if($(window).width() < 700) {
+			$('.x-portal-widget-showcase-view').height(300);
+			$('.x-portal-widget-showcase-view-image').height(300);
+		}else {
+			$('.x-portal-widget-showcase-view').height(470);
+			$('.x-portal-widget-showcase-view-image').height(470);
+		}
+	}
+	$(document).ready(changeHeight);
+	$(window).resize(changeHeight);
+	//end dynamic resize showcase
+
+	$(function() {
+		$('#portal-menu-panel-container').addClass('mobile-hidden');
+		var mainMenuHidden = true;
+		$('.toogle-menu').click(function (e) {
+			if (mainMenuHidden) {
+				$('#portal-menu-panel-container').removeClass('mobile-hidden');
+				$('header h1').css('visibility', 'hidden');
+				$('header h2').css('visibility', 'hidden');
+				mainMenuHidden = false;
+			} else {
+				$('#portal-menu-panel-container').addClass('mobile-hidden');
+				$('header h1').css('visibility', 'visible');
+				$('header h2').css('visibility', 'visible');
+				mainMenuHidden = true;
+			}
+			e.stopPropagation();
+			return false;
+		});
+		$('body').click(function () {
+			$('#portal-menu-panel-container').addClass('mobile-hidden');
+			$('header h1').css('visibility', 'visible');
+			$('header h2').css('visibility', 'visible');
+			mainMenuHidden = true;
+		});
+		$('.x-portal-widget-showcase-view').each(function() {
+			$(this).bind('showcase-next', function() {
+				var idx = $(this).data('showcase-current') || 0;
+
+				$(this).find('article').eq(idx).fadeOut();
+
+				if (idx == $(this).find('article').length - 1) {
+					idx = 0;
+				} else {
+					++idx;
+				}
+
+				$(this).find('article').eq(idx).fadeIn();
+
+				$(this).data('showcase-current', idx);
+
+				var navigationEl = $(this).next();
+				navigationEl.find('a.item').removeClass('active');
+				navigationEl.find('a.item').eq(idx).addClass('active');
+
+				setTimeout(function() {
+					$('.x-portal-widget-showcase-view').triggerHandler('showcase-next');
+				}, 3000);
+			});
+		}).triggerHandler('showcase-next');
+
+		$('.x-portal-widget-showcase-navigation a.item').click(function(e) {
+			var showcaseEl = $(this).parents('.x-portal-widget-showcase-navigation').prev();
+			var navigationEl = $(this).parents('.x-portal-widget-showcase-navigation');
+			var idx = showcaseEl.data('showcase-current') || 0;
+			showcaseEl.find('article').eq(idx).fadeOut();
+			idx = $(this).index();
+			showcaseEl.find('article').eq(idx).fadeIn();
+			showcaseEl.data('showcase-current', idx);
+			navigationEl.find('a.item').removeClass('active');
+			navigationEl.find('a.item').eq(idx).addClass('active');
+			e.stopPropagation();
+			return false;
+		});
+
+		// SHOWCASEVIDEO
+		$('.x-portal-widget-showcasevideo-view').each(function() {
+			var timeout;
+			$(this).bind('showcasevideo-next', function() {
+				var idx = $(this).data('showcasevideo-current') || 0;
+
+				$(this).find('article').eq(idx).fadeOut();
+
+				if (idx == $(this).find('article').length - 1) {
+					idx = 0;
+				} else {
+					++idx;
+				}
+
+				$(this).find('article').eq(idx).fadeIn();
+
+				$(this).data('showcasevideo-current', idx);
+
+				var navigationEl = $(this).next();
+				navigationEl.find('a.item').removeClass('active');
+				navigationEl.find('a.item').eq(idx).addClass('active');
+
+				timeout = setTimeout(function() {
+					$('.x-portal-widget-showcasevideo-view').triggerHandler('showcasevideo-next');
+				}, 5000);
+
+				$(this).find('iframe').mouseenter(function() {
+					clearTimeout(timeout);
+				});
+			});
+		}).triggerHandler('showcasevideo-next');
+
+		$('iframe').click(function(e){
+			alert("klikol si");
+		});
+
+		$('.x-portal-widget-showcasevideo-navigation a.item').click(function(e) {
+			var showcaseEl = $(this).parents('.x-portal-widget-showcasevideo-navigation').prev();
+			var navigationEl = $(this).parents('.x-portal-widget-showcasevideo-navigation');
+			var idx = showcaseEl.data('showcasevideo-current') || 0;
+			showcaseEl.find('article').eq(idx).fadeOut();
+			idx = $(this).index();
+			showcaseEl.find('article').eq(idx).fadeIn();
+			showcaseEl.data('showcasevideo-current', idx);
+			navigationEl.find('a.item').removeClass('active');
+			navigationEl.find('a.item').eq(idx).addClass('active');
+			e.stopPropagation();
+			return false;
+		});
+		// END SHOWCASEVIDEO
+
+		$('.x-portal-widget-gallery').each(function(index) {
+			$(this).find('.x-portal-widget-gallery-viewer-window-images').append(
+				$(this).find('.x-portal-widget-gallery-thm > img').clone()
+			);
+
+			$(this).bind('gallery-next', function(e, idx) {
+
+			});
+
+			$(this).bind('gallery-show', function(e, idx) {
+				$(this).find('.x-portal-widget-gallery-viewer').css('display', 'table-cell');
+				$(this).data('gallery-current', idx);
+
+				$(this).find('.x-portal-widget-gallery-viewer-window-images > img').eq(idx).fadeIn();
+			});
+
+			$(this).bind('gallery-next', function(e) {
+				var idx = $(this).data('gallery-current');
+
+				$(this).find('.x-portal-widget-gallery-viewer-window-images > img').eq(idx).fadeOut();
+
+				if (idx == $(this).find('.x-portal-widget-gallery-viewer-window-images > img').length - 1) {
+					idx = 0;
+				} else {
+					++idx;
+				}
+
+				$(this).find('.x-portal-widget-gallery-viewer-window-images > img').eq(idx).fadeIn();
+
+				$(this).data('gallery-current', idx);
+			});
+
+			$(this).bind('gallery-prev', function(e) {
+				var idx = $(this).data('gallery-current');
+
+				$(this).find('.x-portal-widget-gallery-viewer-window-images > img').eq(idx).fadeOut();
+
+				if (idx == 0) {
+					idx = $(this).find('.x-portal-widget-gallery-viewer-window-images > img').length - 1;
+				} else {
+					--idx;
+				}
+
+				$(this).find('.x-portal-widget-gallery-viewer-window-images > img').eq(idx).fadeIn();
+
+				$(this).data('gallery-current', idx);
+			});
+
+			$(this).bind('gallery-close', function(e, idx) {
+				var idx = $(this).data('gallery-current');
+
+				$(this).find('.x-portal-widget-gallery-viewer-window-images > img').eq(idx).hide();
+				$(this).find('.x-portal-widget-gallery-viewer').fadeOut();
+			});
+
+			$(this).find('.x-portal-widget-gallery-close-btn').on('click', function() {
+				$(this).closest('.x-portal-widget-gallery').triggerHandler('gallery-close');
+			});
+
+			$(this).find('.x-portal-widget-gallery-next-btn').on('click', function() {
+				$(this).closest('.x-portal-widget-gallery').triggerHandler('gallery-next');
+			});
+
+			$(this).find('.x-portal-widget-gallery-prev-btn').on('click', function() {
+				$(this).closest('.x-portal-widget-gallery').triggerHandler('gallery-prev');
+			});
+
+			$(this).find('.x-portal-widget-gallery-thm > img').each(function(idx){
+				$(this).on('click', function(evt) {
+					$(this).closest('.x-portal-widget-gallery').triggerHandler('gallery-show', [idx]);
+				});
+			});
+
+			$(document).on('keyup', function(e){
+				if (e.which == 27) {
+					$('.x-portal-widget-gallery').closest('.x-portal-widget-gallery').triggerHandler('gallery-close');
+				} else if (e.which == 37) {
+					$('.x-portal-widget-gallery').closest('.x-portal-widget-gallery').triggerHandler('gallery-prev');
+				} else if (e.which == 39) {
+					$('.x-portal-widget-gallery').closest('.x-portal-widget-gallery').triggerHandler('gallery-next');
+				}
+			});
+		});
+
+		// animated scrolling
+		$(function() {
+			var menu = $('#portal-menu-panel'),
+				menuLinks = menu.find('a');
+
+			menuLinks.on('click', function(event){
+				var jumpTo = this.hash;
+
+				$('body').animate({scrollTop: $(jumpTo).offset().top}, 1000, function(){
+					window.location.hash = jumpTo;
+				});
+				event.preventDefault();
+			});	
+
+			// back to top
+			var backToTop = $('<a>', {
+								href: '#portal-main-container',
+								class: 'back-to-top',
+								html: '<i class="fa fa-caret-up fa-4x"></i>'
+							});
+			backToTop
+				.hide()
+				.appendTo('body')
+				.on('click', function(event){
+					event.preventDefault();
+					$('body').animate({scrollTop: 0})
+				});
+
+			var win = $(window);
+			win.on('scroll', function(){
+				if ( win.scrollTop() >= 300 ) backToTop.fadeIn();
+				else backToTop.hide();
+			})
+		});
+	});
+</script>
+</html>

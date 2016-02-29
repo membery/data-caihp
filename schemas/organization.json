@@ -1,47 +1,116 @@
 {
 	"$schema": "http://json-schema.org/schema#",
-	"id": "uri://registries/organization#",
-
+	"id": "uri://registries/organizations#",
 	"blocks":{
-		"organization": {
-			"title": "ZÁKLADNÍ INFORMACE",
-			"transCode":"schema.org.baseData",
+		"club": {
+			"title": "Základné údaje",
+			"transCode": "schema.org.baseData",
 			"type": "object",
 			"properties": {
-				"name": {
+				"codeOfClub": {
+					"title": "Kód klubu",
+					"transCode":"schema.org.club.codeOfClub",
 					"type": "string",
-					"title": "Názov organizacie",
-					"transCode": "schema.org.baseData.name",
-					"required": true,
+					"sequence": "clubs"
+				},
+				"name": {
+					"title": "Názov klubu",
+					"transCode":"schema.org.club.name",
+					"type": "string",
+					"required":true,
 					"collate":true
 				},
-				"competitionCategory": {
+				"startDate": {
+					"extends":"uri://registries/commontypes#blocks/date",
+					"title": "Dátum založenia",
+					"transCode":"schema.org.club.startDate"
+				},
+				"stateOfClub": {
+					"extends":"uri://registries/commonenums#blocks/active",
+					"title": "Stav klubu",
+					"transCode":"schema.org.club.stateOfClub",
+					"type": "string"
+				},
+				"notPaying": {
+					"extends":"uri://registries/commonenums#blocks/boolean",
+					"title": "Neplatič",
+					"transCode":"schema.org.club.notPaying",
+					"type": "string"
+				},
+				"dateOfRegistration": {
+					"extends":"uri://registries/commontypes#blocks/date",
+					"title": "Dátum registrácie",
+					"transCode":"schema.org.club.dateOfRegistration"
+				}
+			}
+		},
+		"clubAdress": {
+			"title": "Klub - poštová adresa",
+			"transCode":"schema.org.club.clubAdress",
+			"type": "object",
+			"properties": {
+				"contactPerson": {
+					"title": "Kontaktná osoba",
+					"transCode":"schema.org.club.contactPerson",
+					"type": "string"
+				},
+				"mobileNumberOfContactPerson": {
+					"title": "Telefónne číslo kontaktnej osoby",
+					"transCode":"schema.org.club.mobileNumberOfContactPerson",
+					"type": "string"
+				},
+				"street": {
+					"title": "Ulica",
+					"transCode":"schema.org.club.street",
+					"type": "string"
+				},
+				"houseNumber": {
+					"title": "Číslo domu",
+					"transCode":"schema.org.club.houseNumber",
+					"type": "string"
+				},
+				"city": {
+					"$ref": "uri://registries/towns#town"
+				},
+				"zipCode": {
+					"title": "PSČ",
+					"transCode":"schema.org.club.zipCode",
+					"type": "string"
+				},
+				"region": {
+					"title": "Kraj",
+					"transCode":"schema.org.club.region",
+					"type": "string"
+				},
+				"country": {
+					"$ref": "uri://registries/countries#country"
+				}
+			}
+		},
+		"logoInfo": {
+			"title": "Logo",
+			"transCode": "schema.org.logoInfo",
+			"type": "object",
+			"properties": {
+				"photo": {
+					"title": "Logo",
+					"transCode": "schema.org.logo",
 					"type": "string",
-					"title": "Kategorie soutěže",
-					"transCode": "schema.people.hockeyPlayerInfo.category",
-					"enum": [
-						"Extraliga",
-						"1.NHL"
-					],
-					"enumTransCodes": [
-						"schema.people.hockeyPlayerInfo.category.extraliga",
-						"schema.people.hockeyPlayerInfo.category.nhl"
-					],
-					"required": false,
 					"render": {
-						"component": "psui-selectbox",
-						"searchable": true
+						"component": "psui-uploadable-image",
+						"height": 230,
+						"width": 230
 					}
 				}
 			}
 		}
 	},
 
-	"models": {
-		"organization":{
-			"title": "Organizacie",
-			"transCode": "schema.org.title",
+	"models":{
+		"club":{
 			"table": "organizations",
+			"title":"Klub",
+			"transCode":"schema.org.club.title",
 			"security": {
 				"create": {
 					"static": [
@@ -59,61 +128,207 @@
 					]
 				}
 			},
+			"forcedCriteria": [
+				{
+					"f": "club",
+					"op": "ex",
+					"v": ""
+				}
+			],
+			"fireEvents":{
+				"create": "event-agecategory-created",
+				"update": "event-agecategory-updated"
+			},
 			"properties":{
-				"baseData":{
-					"extends":"uri://registries/organization#blocks/organization"
+				"club":{
+					"$ref":"uri://registries/organizations#blocks/club"
+				},
+				"logoInfo":{
+					"$ref":"uri://registries/organizations#blocks/logoInfo"
+				},
+				"clubAdress":{
+					"$ref":"uri://registries/organizations#blocks/clubAdress"
+				}
+			}
+		},
+		"club-km":{
+			"table": "organizations",
+			"title":"Klub",
+			"transCode":"schema.org.club.title",
+			"security": {
+				"create": {
+					"static": [
+						"Club - write - KM"
+					]
+				},
+				"read": {
+					"static": [
+						"Club - read - KM"
+					]
+				},
+				"modify": {
+					"static": [
+						"Club - write - KM"
+					]
+				}
+			},
+			"forcedCriteria": [
+				{
+					"f": "club",
+					"op": "ex",
+					"v": ""
+				}
+			],
+			"fireEvents":{
+				"create": "event-agecategory-created",
+				"update": "event-agecategory-updated"
+			},
+			"properties":{
+				"club":{
+					"$ref":"uri://registries/organizations#blocks/club"
+				},
+				"logoInfo":{
+					"$ref":"uri://registries/organizations#blocks/logoInfo"
+				},
+				"clubAdress":{
+					"$ref":"uri://registries/organizations#blocks/clubAdress"
 				}
 			}
 		}
 	},
 
-	"views": {
-		"organization": {
-			"new": {
-				"extends":"uri://registries/organization#models/organization"
+	"views":{
+		"club":{
+			"new":{
+				"$ref":"uri://registries/organizations#models/club"
 			},
-			"view": {
-				"extends":"uri://registries/organization#models/organization",
-				"clientActions": [
-					{
-						"__DIRECTIVE__": "generate-action-link",
-						"title": "Poplatky",
-						"schemaFrom": "uri://registries/organization#views/organization/view",
-						"generateBy": "CLUB-ACCOUNTING",
-						"template": "clubAccounting.html"
-					}
-				]
+			"view":{
+				"$ref":"uri://registries/organizations#models/club"
 			},
-			"search": {
-				"extends":"uri://registries/organization#models/organization",
+			"search":{
+				"extends":"uri://registries/organizations#models/club",
 				"clientActions": [
 					{
 						"__DIRECTIVE__": "schema-redirect-link",
 						"title": "Zobraziť",
 						"params": {
-							"path": "/registry/view/uri~3A~2F~2Fregistries~2Forganization~23views~2Forganization/{{model.id}}"
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Forganizations~23views~2Fclub/{{model.id}}"
 						}
 					}
 				],
+				"properties":{
+					"logoInfo":null
+				},
 				"listFields": [
 					{
-						"field": "baseData.name",
-						"title": "Názov",
-						"transCode": "schema.org.baseData.name"
+						"field": "club.name",
+						"title": "Názov klubu",
+						"transCode": "schema.org.club.name"
+					},
+					{
+						"field": "club.association",
+						"title": "Zväz",
+						"transCode": "schema.org.club.association"
+					},
+					{
+						"field": "clubAdress.city",
+						"title": "Mesto",
+						"transCode": "schema.towns.town"
+					},
+					{
+						"field": "club.stateOfClub",
+						"title": "Stav klubu",
+						"transCode": "schema.org.club.stateOfClub"
+					},
+					{
+						"field": "club.notPaying",
+						"title": "Neplatič",
+						"transCode": "schema.org.club.notPaying"
 					}
 				]
 			}
-		}
-	},
-
-
-
-	"properties": {
-		"baseData": {
-			"title": "ZÁKLADNÍ INFORMACE",
-			"type": "object",
-			"properties": {
-
+		},
+		"club-km":{
+			"new":{
+				"$ref":"uri://registries/organizations#views/club-km/view"
+			},
+			"view":{
+				"extends":"uri://registries/organizations#models/club-km",
+				"properties": {
+					"club": {
+						"properties": {
+							"codeOfClub": {
+								"readOnly": true
+							},
+							"name": {
+								"readOnly": true
+							},
+							"association": {
+								"readOnly": true
+							},
+							"ico": {
+								"readOnly": true
+							},
+							"startDate": {
+								"readOnly": true
+							},
+							"stadium": {
+								"readOnly": true
+							},
+							"stateOfClub": {
+								"readOnly": true
+							},
+							"notPaying": {
+								"readOnly": true
+							},
+							"dateOfRegistration": {
+								"readOnly": true
+							}
+						}
+					}
+				}
+			},
+			"search":{
+				"extends":"uri://registries/organizations#models/club-km",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Forganizations~23views~2Fclub-km/{{model.id}}"
+						}
+					}
+				],
+				"properties":{
+					"logoInfo": null
+				},
+				"listFields": [
+					{
+						"field": "club.name",
+						"title": "Názov klubu",
+						"transCode": "schema.org.club.name"
+					},
+					{
+						"field": "club.association",
+						"title": "Zväz",
+						"transCode": "schema.org.club.association"
+					},
+					{
+						"field": "clubAdress.city",
+						"title": "Mesto",
+						"transCode": "schema.towns.town"
+					},
+					{
+						"field": "club.stateOfClub",
+						"title": "Stav klubu",
+						"transCode": "schema.org.club.stateOfClub"
+					},
+					{
+						"field": "club.notPaying",
+						"title": "Neplatič",
+						"transCode": "schema.org.club.notPaying"
+					}
+				]
 			}
 		}
 	}

@@ -14,7 +14,6 @@
 	"config" : {
 		"displayBlocks" : [
 			"title",
-			"abstract",
 			"content",
 			"image650"
 		],

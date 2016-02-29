@@ -1,10 +1,10 @@
-<!-- With sidebar -->
+<!-- index -->
 <!DOCTYPE html>
 <html lang="sk">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Česká asociace hokejistů</title>
+	<title>MSW2016</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -17,29 +17,28 @@
 	<link rel="stylesheet" type="text/css" href="/portal/css/standalone.css">
 	<link rel="stylesheet" type="text/css" href="/portal/css/portal.css">
 	<link rel="stylesheet" type="text/css" href="/portal/css/font-awesome.min.css">
-	<link rel="icon" href="/portal/img/favicon.png" type="image/x-icon">
+	<link rel="icon" href="/portal/img/favicon2.png" type="image/x-icon">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body>
 	<div id="portal-main-container">
 		<div id="portal-header-container">
-			<div class="black-bckg"></div>
 			<header id="portal-main-header">
 				<a href="/">
-					<img class="portal-logo" src="/portal/img/portal-logo.png" alt="logo" title="caihp" />
+					<img class="portal-logo" src="/portal/img/logoSZH.png" width="150" alt="logo" title="caihp" />
 				</a>
-				<!-- <div class="social-icons">
-					<a href="https://www.facebook.com/caihp.cz" target="_new"><div class="fcb"></div></a>
-					<a href="mailto:info@caihp.cz"><div class="email" style="left:860px;"></div></a>
-					<a href="https://twitter.com/caihpcz" target="_new"><div class="tw"></div></a>
-				</div> -->
+				<div class="social-icons">
+					 <ul>
+						<li><a href="https://www.facebook.com/caihp.cz" target="_new"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+					</ul> 
+				</div>
 				<div id="portal-menu-panel-container">
 					{% block menu %}
 						<ul id="portal-menu-panel">
 							{%for k in menu %}
 								<li class="portal-menu-entry">
-									<a href="/article/{{k.aid}}">{{k.name}}</a>
+									<a href="{% if k.hash %}#{{k.hash}}{% else %}/article/{{k.aid}}{% endif %}">{{k.name}}</a>
 								</li>
 							{% endfor %}
 						</ul>
@@ -55,87 +54,138 @@
 		<div id="portal-content-container">
 			<div id="portal-main-content">
 				{% for widget in article.data %}
-					<article class="portal-article {{ widget.meta.type }} portal-article-{{ widget.meta.name }}">
+					<article class="portal-article {{ widget.meta.type }} portal-article-{{ widget.meta.name }} {{ widget.css.cssClass }}">
+						
 						{% set templatePath = "widgets/" + widget.meta.type + ".widget" %}
 						{% include templatePath with widget only %}
 					</article>
 				{% endfor %}
-			</div>
-			<div id="portal-side-content">
-				<section class="portal-side-panel">
-					<h1>Sociální média</h1>
-					<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fcaihp.cz&amp;width=275&amp;height=590&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=true&amp;show_border=true&amp;appId=1439958052895846" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:275px; height:300px;" allowtransparency="true"></iframe>
-					<br>
-					<br>
-					<a class="twitter-timeline" href="https://twitter.com/CAIHPcz" data-widget-id="656449452023128065">Tweets by @CAIHPcz</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-				</section>
+				<article id="groups" class="portal-article groups portal-article-groups">
+					<div class="groups-container">
+						<h1>WOMEN'S YOUTH WORLD CHAMPIONSHIP GROUPS</h1>
+						<section class="groups">
+							<div class="group">
+								<h2>GROUP A</h2>
+								<div class="nationalities">
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+								</div>
+							</div>
+							<div class="group">
+								<h2>GROUP B</h2>
+								<div class="nationalities">
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+								</div>
+							</div>
+							<div class="group">
+								<h2>GROUP C</h2>
+								<div class="nationalities">
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+								</div>
+							</div>
+							<div class="group">
+								<h2>GROUP D</h2>
+								<div class="nationalities">
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+									<div class="nationality">
+										<img src="../client/img/spain.jpg" height="44" width="62" alt="">
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</article>
+				<footer>
+					<div class="copyright">
+						<p>SZH 2016</p>
+					</div>
+				</footer>
 			</div>
 		</div>
 	</div>
-	<footer>
-		<div id="footer-container">
-			<article class="patatext">
-				<h1>ASOCIACE</h1>
-				<ul>
-					<li><a href="http://www.nhlpa.com" target="_blank">NHLPA</a></li>
-					<li><a href="http://www.saip.ch/" target="_blank">SAIP</a></li>
-					<li><a href="http://www.sico.nu/" target="_blank">SICO</a></li>
-					<li><a href="http://www.sjry.fi/" target="_blank">FHPA</a></li>
-					<li><a href="http://www.niso.no/" target="_blank">NISO</a></li>
-					<li><a href="http://www.khlptu.ru/" target="_blank">KHLPTU</a></li>
-					<li><a href="http://www.waipu.org/" target="_blank">WAIPU</a></li>
-				</ul>
-			</article>
-
-			<article class="patatext">
-				<h1>ORGANIZACE</h1>
-				<ul>
-					<li><a href="http://www.cslh.cz/" target="_new">ČSLH</a></li>
-					<li><a href="http://www.apklh.cz/" target="_blank">APK LH</a></li>
-					<li><a href="http://www.iihf.com/" target="_blank">IIHF</a></li>
-					<li><a href="http://www.nhl.cz/" target="_blank">NHL</a></li>
-					<li><a href="http://en.khl.ru/" target="_blank">KHL</a></li>
-					<li><a href="http://theahl.com/" target="_blank">AHL</a></li>
-				</ul>
-			</article>
-
-			<article class="patatext">
-				<h1>ZPRAVODAJSTVÍ</h1>
-				<ul>
-					<li><a href="http://www.hokej.cz/" target="_new">Hokej.cz</a></li>
-					<li><a href="http://isport.blesk.cz/hokej" target="_blank">iSport.cz</a></li>
-					<li><a href="http://hokej.idnes.cz/" target="_blank">iDnes.cz</a></li>
-					<li><a href="http://www.sport.cz/hokej/#hp-list-top" target="_blank">Sport.cz</a></li>
-					<li><a href="http://sport.lidovky.cz/hokej.aspx" target="_blank">Lidovky.cz</a></li>
-					<li><a href="http://sport.aktualne.cz/hokej/" target="_blank">Aktualne.cz</a></li>
-					<li><a href="http://www.tyden.cz/rubriky/sport/hokej/" target="_blank">Tyden.cz</a></li>
-				</ul>
-			</article>
-
-			<article class="patatext">
-				<h1>SOUTĚŽE</h1>
-				<ul>
-					<li><a href="http://www.hokej.cz/cz/reprezentace/" target="_new"> Reprezentace</a></li>
-					<li><a href="http://www.hokej.cz/cz/tipsport-extraliga/" target="_new">Tipsport extraliga</a></li>
-					<li><a href="http://www.hokej.cz/cz/1-liga/" target="_blank">1.liga</a></li>
-					<li><a href="http://www.hokej.cz/cz/2-liga/" target="_blank">2.liga</a></li>
-					<li><a href="http://www.hokej.cz/cz/mladez/" target="_blank">Mládež</a></li>
-					<li><a href="http://www.hokej.cz/cz/euro-hockey-tour/" target="_blank">Euro Hockey Tour</a></li>
-					<li><a href="http://www.hokej.cz/cz/european-trophy/" target="_blank">European Trophy</a></li>
-				</ul>
-			</article>
-		</div>
-		<div class="copyright">
-			<span style="font-family:  'Open Sans', sans-serif;color:black;font-size:10px;">
-		<br>
-		<strong>© Copyright:</strong> CAIHP o.s., Všechna práva vyhrazena.
-		<br><strong>Webmaster:</strong> <a href="http://www.legal-soft.cz" target="_blank">Legalsoft s.r.o.</a>
-
-		</span>
-		</div>
-	<footer>
 </body>
 <script>
+	//dynamic resize showcase height
+	function changeHeight() {
+		if($(window).width() < 1100 && $(window).width() > 640) {
+			$('.x-portal-widget-showcase-view').height( $(window).width() / 2.34042);
+			$('.x-portal-widget-showcase-view-image').height( $(window).width() / 2.34042);
+		}else if($(window).width() < 700) {
+			$('.x-portal-widget-showcase-view').height(300);
+			$('.x-portal-widget-showcase-view-image').height(300);
+		}else {
+			$('.x-portal-widget-showcase-view').height(470);
+			$('.x-portal-widget-showcase-view-image').height(470);
+		}
+	}
+	$(document).ready(changeHeight);
+	$(window).resize(changeHeight);
+	//end dynamic resize showcase
+
 	$(function() {
 		$('#portal-menu-panel-container').addClass('mobile-hidden');
 		var mainMenuHidden = true;
@@ -176,15 +226,82 @@
 
 				$(this).data('showcase-current', idx);
 
+				var navigationEl = $(this).next();
+				navigationEl.find('a.item').removeClass('active');
+				navigationEl.find('a.item').eq(idx).addClass('active');
+
 				setTimeout(function() {
 					$('.x-portal-widget-showcase-view').triggerHandler('showcase-next');
 				}, 3000);
 			});
-
 		}).triggerHandler('showcase-next');
 
-		$('.x-portal-widget-gallery').each(function(index) {
+		$('.x-portal-widget-showcase-navigation a.item').click(function(e) {
+			var showcaseEl = $(this).parents('.x-portal-widget-showcase-navigation').prev();
+			var navigationEl = $(this).parents('.x-portal-widget-showcase-navigation');
+			var idx = showcaseEl.data('showcase-current') || 0;
+			showcaseEl.find('article').eq(idx).fadeOut();
+			idx = $(this).index();
+			showcaseEl.find('article').eq(idx).fadeIn();
+			showcaseEl.data('showcase-current', idx);
+			navigationEl.find('a.item').removeClass('active');
+			navigationEl.find('a.item').eq(idx).addClass('active');
+			e.stopPropagation();
+			return false;
+		});
 
+		// SHOWCASEVIDEO
+		$('.x-portal-widget-showcasevideo-view').each(function() {
+			var timeout;
+			$(this).bind('showcasevideo-next', function() {
+				var idx = $(this).data('showcasevideo-current') || 0;
+
+				$(this).find('article').eq(idx).fadeOut();
+
+				if (idx == $(this).find('article').length - 1) {
+					idx = 0;
+				} else {
+					++idx;
+				}
+
+				$(this).find('article').eq(idx).fadeIn();
+
+				$(this).data('showcasevideo-current', idx);
+
+				var navigationEl = $(this).next();
+				navigationEl.find('a.item').removeClass('active');
+				navigationEl.find('a.item').eq(idx).addClass('active');
+
+				timeout = setTimeout(function() {
+					$('.x-portal-widget-showcasevideo-view').triggerHandler('showcasevideo-next');
+				}, 5000);
+
+				$(this).find('iframe').mouseenter(function() {
+					clearTimeout(timeout);
+				});
+			});
+		}).triggerHandler('showcasevideo-next');
+
+		$('iframe').click(function(e){
+			alert("klikol si");
+		});
+
+		$('.x-portal-widget-showcasevideo-navigation a.item').click(function(e) {
+			var showcaseEl = $(this).parents('.x-portal-widget-showcasevideo-navigation').prev();
+			var navigationEl = $(this).parents('.x-portal-widget-showcasevideo-navigation');
+			var idx = showcaseEl.data('showcasevideo-current') || 0;
+			showcaseEl.find('article').eq(idx).fadeOut();
+			idx = $(this).index();
+			showcaseEl.find('article').eq(idx).fadeIn();
+			showcaseEl.data('showcasevideo-current', idx);
+			navigationEl.find('a.item').removeClass('active');
+			navigationEl.find('a.item').eq(idx).addClass('active');
+			e.stopPropagation();
+			return false;
+		});
+		// END SHOWCASEVIDEO
+
+		$('.x-portal-widget-gallery').each(function(index) {
 			$(this).find('.x-portal-widget-gallery-viewer-window-images').append(
 				$(this).find('.x-portal-widget-gallery-thm > img').clone()
 			);
@@ -256,6 +373,51 @@
 					$(this).closest('.x-portal-widget-gallery').triggerHandler('gallery-show', [idx]);
 				});
 			});
+
+			$(document).on('keyup', function(e){
+				if (e.which == 27) {
+					$('.x-portal-widget-gallery').closest('.x-portal-widget-gallery').triggerHandler('gallery-close');
+				} else if (e.which == 37) {
+					$('.x-portal-widget-gallery').closest('.x-portal-widget-gallery').triggerHandler('gallery-prev');
+				} else if (e.which == 39) {
+					$('.x-portal-widget-gallery').closest('.x-portal-widget-gallery').triggerHandler('gallery-next');
+				}
+			});
+		});
+
+		// animated scrolling
+		$(function() {
+			var menu = $('#portal-menu-panel'),
+				menuLinks = menu.find('a');
+
+			menuLinks.on('click', function(event){
+				var jumpTo = this.hash;
+
+				$('body').animate({scrollTop: $(jumpTo).offset().top}, 1000, function(){
+					window.location.hash = jumpTo;
+				});
+				event.preventDefault();
+			});	
+
+			// back to top
+			var backToTop = $('<a>', {
+								href: '#portal-main-container',
+								class: 'back-to-top',
+								html: '<i class="fa fa-caret-up fa-4x"></i>'
+							});
+			backToTop
+				.hide()
+				.appendTo('body')
+				.on('click', function(event){
+					event.preventDefault();
+					$('body').animate({scrollTop: 0})
+				});
+
+			var win = $(window);
+			win.on('scroll', function(){
+				if ( win.scrollTop() >= 300 ) backToTop.fadeIn();
+				else backToTop.hide();
+			})
 		});
 	});
 </script>

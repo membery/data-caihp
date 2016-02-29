@@ -1,0 +1,13 @@
+{
+	"meta": {
+		"name": "video",
+		"element": "<div></div>",
+		"type": "video",
+		"title": "Embedované video",
+		"desc": "Vloží na stránku video z youtube",
+		"icon": "img/block-video.svg"
+	},
+	"data": {
+		"src": ""
+	}
+}

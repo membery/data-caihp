@@ -1,0 +1,77 @@
+<div class="x-portal-widget-match-results" id="{{blockUUID}}">
+	<section class="x-portal-competition-matches">
+		<h1>MATCH SCHEDULE</h1>
+		<div style="width:100%;"><select style="width:100%; margin-top: 5px; margin-bottom: 5px; outline: 0;" class="x-portal-competition-selector"></select></div>
+		<div class="x-portal-widget-match-results-table">
+		</div>	
+	</section>
+</div>
+<script>
+$(function() {
+	$('#{{blockUUID}}').find('.x-portal-competition-selector').on('change', function() {
+		$(this).closest('.x-portal-competition-matches').trigger('competition-matches-show');
+	});
+
+	//get competitions
+	$.get('/competition/list', function(data) {
+		data.sort(function(a,b) {
+			if (a.lvl === b.lvl) {
+				return a.name.localeCompare(b.name);
+			} else {
+				return a.lvl - b.lvl;
+			}
+		});
+
+		$('#{{blockUUID}}').find('.x-portal-competition-selector').empty();
+		for (var i in data) {
+			$('#{{blockUUID}}').find('.x-portal-competition-selector').append('<option value="'+data[i].id+'">'+ data[i].name + '</option>');
+		}
+		$('#{{blockUUID}}').find('.x-portal-competition-selector').trigger('change');
+	});
+
+	$('#{{blockUUID}}').bind('competition-matches-show', function() {
+		var cid = $(this).find('.x-portal-competition-selector').val();
+		var that = this;
+
+		if (cid) {
+			$.get('/competition/matches/'+cid, function(data) {
+				function formatDate(d) {
+					return d.substr(6,2) + '.' +d.substr(4,2) + '.' + d.substr(0,4);
+				}
+
+				var tblContainer = $(that).find('.x-portal-widget-match-results-table');
+
+				tblContainer.empty();
+
+				var lastDate = null;
+				var position = 0;
+				var tableHeader = $('<div class="x-portal-widget-match-results-match-header"><div class="x-portal-results-date">DATE</div><div class="x-portal-results-time">TIME</div><div class="x-portal-results-location">LOCATION</div><div class="x-portal-results-left-club">HOME</div><div class="x-portal-results-hyphen">MATCH RESULTS</div><div class="x-portal-results-right-club">AWAY</div></div>');
+				tblContainer.append(tableHeader);
+				for (var i in data) {
+					var currDate = formatDate(data[i].matchDate);
+					if (lastDate !== currDate) {
+						var table = $('<div class="x-portal-widget-match-results-match"></div>');
+						tblContainer.append(table);
+						position++;
+					}
+					position++;
+
+					var fragment = '<div class="x-portal-results-date">'+currDate+'</div><div class="x-portal-results-time">'+data[i].matchBegin+'</div><div class="x-portal-results-location">'+data[i].stadium+'</div><div class="x-portal-results-left-club">' + data[i].homeName + '</div><div class="x-portal-results-hyphen">'+(data[i].fullTimeScoreHome || '-')+ '&nbsp;:&nbsp;'+(data[i].fullTimeScoreAway || '-')+'</div><div class="x-portal-results-right-club">' + data[i].guestName + '</div>';
+
+					var e = $(fragment);
+
+					if (!data[i].started && data[i].matchTime && !data[i].finished) {
+						e.find('.x-portal-results-hyphen').addClass('x-portal-results-just-time').html('&nbsp;'.concat(data[i].matchTime, 'h'));
+					}
+
+					if (data[i].started && !data[i].finished) {
+						e.addClass('x-portal-results-playing');
+					}
+
+					table.append(e);
+				}
+			});
+		}
+	});
+});
+</script>

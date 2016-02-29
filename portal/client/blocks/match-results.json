@@ -1,0 +1,11 @@
+{
+	"meta": {
+		"name": "matchResults",
+		"element": "<div></div>",
+		"type": "match-results",
+		"title": "Výsledky zápasov",
+		"desc": "Časť obsahujúca výsledky zápasov",
+		"icon": "img/block-content.svg"
+	},
+	"data": ""
+}
